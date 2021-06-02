@@ -11,6 +11,9 @@ class Generator(db.Model):
     user_id = db.Column(db.Integer, db.ForeignKey('users.id'), nullable=False)
 
     user = db.relationship('User', back_populates='generator')
+    constraints = db.relationship('Constraints',
+                                  uselist=False,
+                                  back_populates='generator')
 
     def to_dict(self):
         return {
@@ -19,4 +22,5 @@ class Generator(db.Model):
             seed: self.seed,
             iteration: self.iteration
             user_id: self.user_id
+            constraints: self.constraints.to_dict()
         }
