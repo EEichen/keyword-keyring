@@ -78,6 +78,7 @@ export const deleteGenerator = (id) => async (dispatch) => {
     })
 
     dispatch(removeGenerator(id))
+    return res
 }
 
 
@@ -119,6 +120,7 @@ export default function generatorsReducer(state = initialState, action){
         case REMOVE_GENERATOR:
             newState = {...state}
             delete newState[action.id]
+            return newState
         case EDIT_CONSTRAINTS:
             newState = {...state}
             newState[action.genId].constraints = action.constraints

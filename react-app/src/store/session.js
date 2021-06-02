@@ -56,6 +56,8 @@ export const authenticate = () => async (dispatch) => {
     
     const data = await response.json();
     dispatch(removeUser());
+
+    return data
   };
   
   
