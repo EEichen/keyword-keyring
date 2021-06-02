@@ -106,6 +106,17 @@ export const changeConstriants = (constraints) => async (dispatch) => {
 }
 
 
+export const searchGenerators = (input) => async (dispatch) => {
+    const res = await fetch(`/api/search/${input}`)
+
+    const generators = await res.json()
+    console.log(generators)
+    dispatch(populateGenerators(generators))
+    return {}
+
+}
+
+
 //reducer-----------------------------------------------------------------------
 const initialState = {}
 
