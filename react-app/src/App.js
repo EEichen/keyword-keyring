@@ -24,7 +24,7 @@ function App() {
 
   return (
     <BrowserRouter>
-      <NavBar />
+      <NavBar user={user}/>
       <Switch>
         <Route path="/splash" >
           <Splash user={user}/>
