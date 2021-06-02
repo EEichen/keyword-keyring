@@ -1,6 +1,12 @@
 import React from 'react'
+import { Redirect } from "react-router-dom";
 
-const Splash = () => {
+const Splash = ({user}) => {
+
+    if (user) {
+        return <Redirect to="/" />;
+    }
+
     return(
         <div>
             Welcome to kwkr, the password generating app!

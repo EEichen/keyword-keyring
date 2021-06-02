@@ -14,12 +14,10 @@ function App() {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    (async() => {
-      await dispatch(authenticate());
+      dispatch(authenticate());
       setLoaded(true);
-    })();
-  }, []);
-
+  }, [dispatch]);
+  
   if (!loaded) {
     return null;
   }
@@ -27,8 +25,10 @@ function App() {
   return (
     <BrowserRouter>
       <NavBar />
-      <Splash />
       <Switch>
+        <Route path="/splash" >
+          <Splash user={user}/>
+        </Route>
         <Route path="/login" exact={true}>
           <LoginForm />
         </Route>
