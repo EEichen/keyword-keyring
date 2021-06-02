@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useState } from 'react'
 import NewGeneratorForm from './NewGeneratorForm'
 
 const CreateGenerator = () => {
@@ -10,7 +10,7 @@ const CreateGenerator = () => {
 
     return(
         <div>
-            <button onClick={openNewGenerator}>➕ New Generator</button>
+            <button onClick={openNewGenerator}>+ New Generator</button>
             {open && <div className='new-gen-form'>
                 <NewGeneratorForm setOpen={setOpen}/>
             </div>}
