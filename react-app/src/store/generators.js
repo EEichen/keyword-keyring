@@ -46,7 +46,27 @@ export const createGenerator= (title) => async (dispatch) =>{
     })
 
     const generator = await res.json()
+    console.log(generator)
     dispatch(addGenerator(generator))
+    return {}
+}
+
+
+export const editGenerator = (generator) => async (dispatch) => {
+    const res = await fetch(`api/generators/${generator.id}`, {
+        method: "PUT",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify({
+            iteration: generator.iteration,
+            title: generator.title
+        })
+    })
+
+    const newGenerator = await res.json()
+    console.log(newGenerator)
+    dispatch(addGenerator(newGenerator))
     return {}
 }
 //reducer-----------------------------------------------------------------------
