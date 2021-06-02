@@ -45,3 +45,12 @@ def create_generator():
     db.session.commit()
 
     return generator.to_dict()
+
+
+@generator_routes.route('/<int:id>', methods=['PUT'])
+# @login_required
+def edit_generator(id):
+    generator = Generator.query.get(id)
+    data = request.json
+
+    generator.iteration = data['iteration']
