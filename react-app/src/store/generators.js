@@ -37,7 +37,7 @@ export const getGenerators = () => async (dispatch) => {
 
 
 export const createGenerator= (title) => async (dispatch) =>{
-    const res = await fetch('api/generators/', {
+    const res = await fetch('/api/generators/', {
         method: "POST",
         headers: {
             "Content-Type": "application/json"
@@ -53,7 +53,7 @@ export const createGenerator= (title) => async (dispatch) =>{
 
 
 export const editGenerator = (generator) => async (dispatch) => {
-    const res = await fetch(`api/generators/${generator.id}`, {
+    const res = await fetch(`/api/generators/${generator.id}`, {
         method: "PUT",
         headers: {
             "Content-Type": "application/json"
@@ -69,4 +69,15 @@ export const editGenerator = (generator) => async (dispatch) => {
     dispatch(addGenerator(newGenerator))
     return {}
 }
+
+
+export const deleteGenerator = (id) => async (dispatch) => {
+    const res = await fetch(`/api/generators/${id}`, {
+        method: "DELETE"
+    })
+
+    dispatch(removeGenerator(id))
+}
+
+
 //reducer-----------------------------------------------------------------------
