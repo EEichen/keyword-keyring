@@ -81,3 +81,24 @@ export const deleteGenerator = (id) => async (dispatch) => {
 
 
 //reducer-----------------------------------------------------------------------
+const initialState = {}
+
+export default function generatorsReducer(state = initialState, action){
+    let newState;
+    switch(action.type){
+        case POPULATE_GENERATORS:
+            return action.generators
+        case ADD_GENERATOR:
+            newState = {...state, [action.generator.id]: action.generator}
+            return newState
+        case REMOVE_GENERATOR:
+            newState = {...state}
+            delete newState[action.id]
+        case EDIT_CONSTRAINTS:
+            newState = {...state}
+            newState[action.constraints.generator_id].constraints = action.constraints
+            return newState
+        default:
+            return state
+    }
+}
