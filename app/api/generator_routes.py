@@ -54,3 +54,9 @@ def edit_generator(id):
     data = request.json
 
     generator.iteration = data['iteration']
+    generator.title = data[title]
+
+    db.session.add(generator)
+    db.session.commit()
+
+    return generator.to_dict()
