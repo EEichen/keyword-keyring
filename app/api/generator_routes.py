@@ -7,35 +7,36 @@ generator_routes = Blueprint('generators', __name__)
 
 
 @generator_routes.route('/')
-# @login_required
+@login_required
 def get_generators():
-    # generators = Generator.query.filter(
-    #     Generator.user_id == current_user.id).all()
-
-    # api test
     generators = Generator.query.filter(
-        Generator.user_id == 1).all()
+        Generator.user_id == current_user.id).all()
+
+    # # api test
+    # generators = Generator.query.filter(
+    #     Generator.user_id == 1).all()
 
     return {generator.id: generator.to_dict() for generator in generators}
 
 
 @generator_routes.route('/', methods=['POST'])
-# @login_required
+@login_required
 def create_generator():
     data = request.json
 
-    # generator = Generator(
-    #     title=data['title'],
-    #     seed=1,
-    #     user_id=current_user.id
-    # )
-
-    # test generator generation
+    # note! replace seed 1 with actual seed later
     generator = Generator(
         title=data['title'],
         seed=1,
-        user_id=1
+        user_id=current_user.id
     )
+
+    # # test generator generation
+    # generator = Generator(
+    #     title=data['title'],
+    #     seed=1,
+    #     user_id=1
+    # )
 
     db.session.add(generator)
     db.session.commit()
@@ -48,7 +49,7 @@ def create_generator():
 
 
 @generator_routes.route('/<int:id>', methods=['PUT'])
-# @login_required
+@login_required
 def edit_generator(id):
     generator = Generator.query.get(id)
     data = request.json
@@ -63,7 +64,7 @@ def edit_generator(id):
 
 
 @generator_routes.route('/<int:id>', methods=['DELETE'])
-# @login_required
+@login_required
 def delete_generator(id):
     generator = Generator.query.get(id)
 
