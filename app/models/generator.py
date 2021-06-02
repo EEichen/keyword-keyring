@@ -17,10 +17,10 @@ class Generator(db.Model):
 
     def to_dict(self):
         return {
-            id: self.id,
-            title: self.title,
-            seed: self.seed,
-            iteration: self.iteration
-            user_id: self.user_id
-            constraints: self.constraints.to_dict()
+            "id": self.id,
+            "title": self.title,
+            "seed": self.seed,
+            "iteration": self.iteration,
+            "user_id": self.user_id,
+            "constraints": self.constraints.to_dict()
         }
