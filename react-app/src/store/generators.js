@@ -5,22 +5,22 @@ const REMOVE_GENERATOR = 'generators/REMOVE_GENERATOR'
 const EDIT_CONSTRAINTS = 'generators/EDIT_CONSTRAINTS'
 
 const populateGenerators = (generators) => ({
-    action: POPULATE_GENERATORS,
+    type: POPULATE_GENERATORS,
     generators
 }) 
 
 const addGenerator = (generator) => ({
-    action: ADD_GENERATOR,
+    type: ADD_GENERATOR,
     generator
 })
 
 const removeGenerator = (id) => ({
-    action: REMOVE_GENERATOR,
+    type: REMOVE_GENERATOR,
     id
 })
 
 const editConstraints = (constraints, genId) => ({
-    action: EDIT_CONSTRAINTS,
+    type: EDIT_CONSTRAINTS,
     constraints,
     genId
 })

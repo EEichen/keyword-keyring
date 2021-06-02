@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import { useDispatch } from 'react-redux'
-import { createGenerator } from '../../store/generators'
+import NewGeneratorForm from './NewGeneratorForm'
 
 const CreateGenerator = () => {
     const [open, setOpen] = useState(false)
@@ -12,6 +11,11 @@ const CreateGenerator = () => {
     return(
         <div>
             <button onClick={openNewGenerator}>➕ New Generator</button>
+            {open && <div className='new-gen-form'>
+                <NewGeneratorForm setOpen={setOpen}/>
+            </div>}
         </div>
     )
 }
+
+export default CreateGenerator

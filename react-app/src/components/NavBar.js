@@ -1,6 +1,7 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
 import LogoutButton from './auth/LogoutButton';
+import CreateGenerator from './createGenerator/CreateGenerator';
 
 const NavBar = ({user}) => {
   return (
@@ -19,6 +20,7 @@ const NavBar = ({user}) => {
           </NavLink>
         </div>}
         {user && <div>
+          <CreateGenerator />
           <LogoutButton />
         </div>}
 
