@@ -19,9 +19,10 @@ const removeGenerator = (id) => ({
     id
 })
 
-const editConstraints = (constraints) => ({
+const editConstraints = (constraints, genId) => ({
     action: EDIT_CONSTRAINTS,
-    constraints
+    constraints,
+    genId
 })
 //thunks------------------------------------------------------------------------
 export const getGenerators = () => async (dispatch) => {
@@ -80,6 +81,30 @@ export const deleteGenerator = (id) => async (dispatch) => {
 }
 
 
+export const changeConstriants = (constraints) => async (dispatch) => {
+    const res = await fetch(`/api/constraints/${constraints.id}`, {
+        method: 'PUT',
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify({
+            "uppercase_letters": constraints.uppercase_letters,
+            "lowercase_letters": constraints.lowercase_letters,
+            "numbers": constraints.numbers,
+            "symbols": constraints.symbols,
+            "pw_length": constraints.pw_length,
+            "required_uppercase": constraints.required_uppercase,
+            "required_numbers": constraints.required_numbers,
+            "required_symbols": constraints.required_symbols,
+            "allow_duplicates": constraints.allow_duplicates
+        })
+    })
+
+    const newConstraints = await res.json()
+    dispatch(editConstraints(newConstraints, newConstraints.generator_id))
+}
+
+
 //reducer-----------------------------------------------------------------------
 const initialState = {}
 
@@ -96,7 +121,7 @@ export default function generatorsReducer(state = initialState, action){
             delete newState[action.id]
         case EDIT_CONSTRAINTS:
             newState = {...state}
-            newState[action.constraints.generator_id].constraints = action.constraints
+            newState[action.genId].constraints = action.constraints
             return newState
         default:
             return state
