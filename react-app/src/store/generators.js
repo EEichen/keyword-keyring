@@ -24,4 +24,29 @@ const editConstraints = (constraints) => ({
     constraints
 })
 //thunks------------------------------------------------------------------------
+export const getGenerators = () => async (dispatch) => {
+    const res = await fetch('/api/generators/')
+
+    if(res.ok){
+        const generators = await res.json()
+        console.log(generators)
+        dispatch(populateGenerators(generators))
+        return {}
+    }
+}
+
+
+export const createGenerator= (title) => async (dispatch) =>{
+    const res = await fetch('api/generators/', {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify({title})
+    })
+
+    const generator = await res.json()
+    dispatch(addGenerator(generator))
+    return {}
+}
 //reducer-----------------------------------------------------------------------
