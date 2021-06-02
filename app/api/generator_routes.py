@@ -60,3 +60,14 @@ def edit_generator(id):
     db.session.commit()
 
     return generator.to_dict()
+
+
+@generator_routes.route('/<int:id>', methods=['DELETE'])
+# @login_required
+def delete_generator(id):
+    generator = Generator.query.get(id)
+
+    db.session.delete(generator)
+    db.session.commit()
+
+    return {"message": "Deleted!"}

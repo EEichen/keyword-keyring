@@ -13,6 +13,7 @@ class Generator(db.Model):
     user = db.relationship('User', back_populates='generator')
     constraints = db.relationship('Constraints',
                                   uselist=False,
+                                  cascade='all, delete-orphan',
                                   back_populates='generator')
 
     def to_dict(self):
