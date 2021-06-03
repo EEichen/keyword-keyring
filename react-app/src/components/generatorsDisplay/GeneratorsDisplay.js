@@ -1,5 +1,6 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
+import GeneratorCard from './GeneratorCard';
 
 
 const GeneratorsDisplay = () => {
@@ -18,7 +19,7 @@ const GeneratorsDisplay = () => {
 
                 <div className='display-gens'>
                     {Object.values(generators).map(generator => (
-                        <div key={generator.id}>{generator.title}</div>
+                        <GeneratorCard key={generator.id} generator={generator} />
                     ))}
                 </div>
 
