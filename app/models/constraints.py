@@ -9,14 +9,14 @@ class Constraints(db.Model):
         db.ForeignKey('generators.id'),
         nullable=False)
     uppercase_letters = db.Column(
-        db.String(26), default='ABCDEFGHIJKLMNOPQRSTUVWXYZ', nullable=False
+        db.String(260), default='ABCDEFGHIJKLMNOPQRSTUVWXYZ', nullable=False
     )
     lowercase_letters = db.Column(
-        db.String(26), default='abcdefghijklmnopqrstuvwxyz', nullable=False
+        db.String(260), default='abcdefghijklmnopqrstuvwxyz', nullable=False
     )
-    numbers = db.Column(db.String(10), default='1234567890', nullable=False)
+    numbers = db.Column(db.String(100), default='1234567890', nullable=False)
     symbols = db.Column(
-        db.String,
+        db.String(330),
         default="!# \"$%&'()*+,-./:;<=>?@[\\]^_`{|}~",
         nullable=False
     )

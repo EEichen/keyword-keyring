@@ -1,8 +1,8 @@
-"""add generators and constraints
+"""changed character limits on constraints model
 
-Revision ID: e6f3ea18caa0
+Revision ID: 881027dde40a
 Revises: ffdc0a98111c
-Create Date: 2021-06-02 12:11:42.677797
+Create Date: 2021-06-03 17:40:51.111307
 
 """
 from alembic import op
@@ -10,7 +10,7 @@ import sqlalchemy as sa
 
 
 # revision identifiers, used by Alembic.
-revision = 'e6f3ea18caa0'
+revision = '881027dde40a'
 down_revision = 'ffdc0a98111c'
 branch_labels = None
 depends_on = None
@@ -30,15 +30,15 @@ def upgrade():
     op.create_table('constraints',
     sa.Column('id', sa.Integer(), nullable=False),
     sa.Column('generator_id', sa.Integer(), nullable=False),
-    sa.Column('uppercase_letters', sa.String(length=26), nullable=True),
-    sa.Column('lowercase_letters', sa.String(length=26), nullable=True),
-    sa.Column('numbers', sa.String(length=10), nullable=True),
-    sa.Column('symbols', sa.String(), nullable=True),
-    sa.Column('pw_length', sa.Integer(), nullable=True),
-    sa.Column('required_uppercase', sa.Integer(), nullable=True),
-    sa.Column('required_numbers', sa.Integer(), nullable=True),
-    sa.Column('required_symbols', sa.Integer(), nullable=True),
-    sa.Column('allow_duplicates', sa.Boolean(), nullable=True),
+    sa.Column('uppercase_letters', sa.String(length=260), nullable=False),
+    sa.Column('lowercase_letters', sa.String(length=260), nullable=False),
+    sa.Column('numbers', sa.String(length=100), nullable=False),
+    sa.Column('symbols', sa.String(length=330), nullable=False),
+    sa.Column('pw_length', sa.Integer(), nullable=False),
+    sa.Column('required_uppercase', sa.Integer(), nullable=False),
+    sa.Column('required_numbers', sa.Integer(), nullable=False),
+    sa.Column('required_symbols', sa.Integer(), nullable=False),
+    sa.Column('allow_duplicates', sa.Boolean(), nullable=False),
     sa.ForeignKeyConstraint(['generator_id'], ['generators.id'], ),
     sa.PrimaryKeyConstraint('id')
     )
