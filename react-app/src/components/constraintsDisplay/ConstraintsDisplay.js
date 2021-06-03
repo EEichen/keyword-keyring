@@ -20,7 +20,19 @@ const ConstraintsDisplay = ({constraints}) => {
 
 
     const handleSave = () => {
-        return
+        dispatch(changeConstriants({
+            id: constraints.id,
+            uppercase_letters: uppercase,
+            lowercase_letters: lowercase,
+            numbers: numbers,
+            symbols: symbols,
+            required_uppercase: reqUppercase,
+            required_numbers: reqNumbers,
+            required_symbols: reqSymbols,
+            allow_duplicates: duplicates,
+            pw_length: pwLength,
+
+        }))
     }
 
     return(
