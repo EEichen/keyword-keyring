@@ -1,6 +1,7 @@
 import React from 'react'
 import { useDispatch } from 'react-redux'
 import { deleteGenerator, editGenerator } from '../../store/generators'
+import EditTitle from '../EditTitle/EditTitle'
 import Iterator from './Iterator'
 
 
@@ -44,7 +45,7 @@ const GeneratorCard = ({generator}) => {
 
             <div className='card-rightside'>
                 <button>edit constraints</button>
-                <button>edit generator</button>
+                <EditTitle generator={generator} />
                 <button onClick={handleDeleteGen}>delete generator</button>
             </div>
 
