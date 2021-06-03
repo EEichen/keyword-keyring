@@ -3,6 +3,7 @@ import { useDispatch } from 'react-redux'
 import { deleteGenerator, editGenerator } from '../../store/generators'
 import EditTitle from '../EditTitle/EditTitle'
 import Iterator from './Iterator'
+import './GeneratorCard.css'
 
 
 const GeneratorCard = ({generator}) => {

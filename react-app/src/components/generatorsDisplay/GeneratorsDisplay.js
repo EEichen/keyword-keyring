@@ -1,6 +1,7 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
 import GeneratorCard from './GeneratorCard';
+import './GeneratorDisplay.css'
 
 
 const GeneratorsDisplay = () => {
