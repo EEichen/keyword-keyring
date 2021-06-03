@@ -12,4 +12,12 @@ jobs:
       env:
         HEROKU_API_KEY: ${{secrets.HEROKU_API_KEY}}
       run: heroku container:login
+    - name: build/push
+      env:
+        HEROKU_API_KEY: ${{secrets.HEROKU_API_KEY}}
+      run: heroku container:push -a kwkr web
+    - name: release
+      env:
+        HEROKU_API_KEY: ${{secrets.HEROKU_API_KEY}}
+      run: heroku container:release -a kwkr web
 
