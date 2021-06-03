@@ -26,10 +26,10 @@ function App() {
   return (
     <BrowserRouter>
       <NavBar user={user}/>
+      <Route path="/" >
+        {!user && <Splash user={user}/>}
+      </Route>
       <Switch>
-        <Route path="/" >
-          {!user && <Splash user={user}/>}
-        </Route>
         <Route path="/login" exact={true}>
           <LoginForm />
         </Route>
