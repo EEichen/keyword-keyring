@@ -27,7 +27,7 @@ function App() {
     <BrowserRouter>
       <NavBar user={user}/>
       <Route path="/" >
-        {!user && <Splash user={user}/>}
+        {<Splash />}
       </Route>
       <Switch>
         <Route path="/login" exact={true}>
