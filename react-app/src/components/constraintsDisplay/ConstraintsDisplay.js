@@ -6,7 +6,7 @@ import PasswordLength from './PWLength'
 import RequiredCharacters from './RequiredCharacters'
 
 
-const ConstraintsDisplay = ({constraints}) => {
+const ConstraintsDisplay = ({constraints, setShowConstraints}) => {
     const dispatch = useDispatch()
     const [duplicates, setDuplicates] = useState(constraints.allow_duplicates)
     const [pwLength, setPwLength] = useState(constraints.pw_length)
@@ -33,6 +33,7 @@ const ConstraintsDisplay = ({constraints}) => {
             pw_length: pwLength,
 
         }))
+        setShowConstraints(false)
     }
 
     return(
