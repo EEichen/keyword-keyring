@@ -1,12 +1,14 @@
 import React, { useState } from 'react'
 import { useDispatch } from 'react-redux'
 import { changeConstriants } from '../../store/generators'
+import PasswordLength from './PWLength'
 
 
 const ConstraintsDisplay = ({constraints}) => {
     const dispatch = useDispatch()
     const [duplicates, setDuplicates] = useState(constraints.allow_duplicates)
-    
+    const [pwLength, setPwLength] = useState(constraints.pw_length)
+
     return(
         <div className='constraints-display'>
             <div className='constraints simple'>
@@ -17,7 +19,7 @@ const ConstraintsDisplay = ({constraints}) => {
                     checked={duplicates}
                     onChange={e => setDuplicates(e.target.checked)}
                     />
-                    
+                    <PasswordLength pwLength={pwLength} setPwLength={setPwLength} />
                 </div>
             </div>
             <div className='constraints req-char'>
@@ -29,3 +31,4 @@ const ConstraintsDisplay = ({constraints}) => {
         </div>
     )
 }
+export default ConstraintsDisplay

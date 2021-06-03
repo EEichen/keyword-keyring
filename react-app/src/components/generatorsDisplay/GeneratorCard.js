@@ -1,13 +1,15 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { useDispatch } from 'react-redux'
 import { deleteGenerator, editGenerator } from '../../store/generators'
 import EditTitle from '../EditTitle/EditTitle'
 import Iterator from './Iterator'
 import './GeneratorCard.css'
+import ConstraintsDisplay from '../constraintsDisplay/ConstraintsDisplay'
 
 
 const GeneratorCard = ({generator}) => {
     const dispatch = useDispatch()
+    const [showConstraints, setShowConstraints] = useState(false)
 
 
     const increment = () => {
@@ -45,7 +47,8 @@ const GeneratorCard = ({generator}) => {
             </div>
 
             <div className='card-rightside'>
-                <button>edit constraints</button>
+                <button onClick={e => setShowConstraints(prev => !prev)}>edit constraints</button>
+                {showConstraints && <ConstraintsDisplay constraints={generator.constraints}/>}
                 <EditTitle generator={generator} />
                 <button onClick={handleDeleteGen}>delete generator</button>
             </div>
