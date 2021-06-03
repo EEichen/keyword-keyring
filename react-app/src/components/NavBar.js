@@ -4,6 +4,7 @@ import LogoutButton from './auth/LogoutButton';
 import CreateGenerator from './createGenerator/CreateGenerator';
 import { useDispatch } from "react-redux";
 import { login } from "../store/session";
+import './NavBar.css'
 
 
 const NavBar = ({user}) => {
@@ -14,8 +15,8 @@ const NavBar = ({user}) => {
   }
 
   return (
-    <nav>
-        {!user && <div>
+    <nav className='nav-bar'>
+        {!user && <div className='links'>
           <NavLink to="/" exact={true} activeClassName="active">
             Home
           </NavLink>

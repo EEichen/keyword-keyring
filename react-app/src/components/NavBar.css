@@ -1,0 +1,24 @@
+a{
+    color:darkcyan;
+    font: bold 11px;
+    text-decoration: none;
+    padding: 6px;
+    margin: 7px;
+    border-radius: 10%;
+    border: 1px solid darkcyan;
+    width: 7%;
+}
+
+a:hover{
+    box-shadow: 0px 0px 3px;
+    background-color: rgba(255, 255, 255, .02);
+}
+
+.nav-bar{
+    width: 98%;
+}
+
+.links{
+    display: flex;
+    width: 100%;
+}

@@ -6,6 +6,12 @@ import { createGenerator } from '../../store/generators'
 const NewGeneratorForm = ({setOpen}) => {
     const dispatch = useDispatch()
     const [title, setTitle] = useState('')
+
+    const handleCreate = () => {
+        dispatch(createGenerator(title))
+        setOpen(false)
+    }
+
     return (
         <div>
             <input 
@@ -15,7 +21,7 @@ const NewGeneratorForm = ({setOpen}) => {
             value={title}
             onChange={e => setTitle(e.target.value)}
             />
-            <button onClick={e => dispatch(createGenerator(title))}>Create!</button>
+            <button onClick={handleCreate}>Create!</button>
         </div>
     )
 }
