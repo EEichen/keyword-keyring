@@ -3,6 +3,7 @@ import { useDispatch } from 'react-redux'
 import { changeConstriants } from '../../store/generators'
 import AllowedCharacters from './AllowedCharacters'
 import PasswordLength from './PWLength'
+import RequiredCharacters from './RequiredCharacters'
 
 
 const ConstraintsDisplay = ({constraints}) => {
@@ -18,6 +19,10 @@ const ConstraintsDisplay = ({constraints}) => {
     const [reqSymbols, setReqSymbols] = useState(constraints.required_symbols)
 
 
+    const handleSave = () => {
+        return
+    }
+
     return(
         <div className='constraints-display'>
             <div className='constraints simple'>
@@ -32,7 +37,14 @@ const ConstraintsDisplay = ({constraints}) => {
                 </div>
             </div>
             <div className='constraints req-char'>
-
+                <RequiredCharacters
+                    reqUppercase={reqUppercase}
+                    reqNumbers={reqNumbers}
+                    reqSymbols={reqSymbols}
+                    setReqUppercase={setReqUppercase}
+                    setReqNumbers={setReqNumbers}
+                    setReqSymbols={setReqSymbols}
+                />
             </div>
             <div className='constraints allowed-char'>
                 <AllowedCharacters
@@ -46,6 +58,8 @@ const ConstraintsDisplay = ({constraints}) => {
                     setSymbols={setSymbols}
                 />
             </div>
+
+            <button onClick={handleSave}>Save!</button>
         </div>
     )
 }
