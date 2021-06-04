@@ -1,0 +1,44 @@
+.sign-up-page{
+    margin: auto;
+    position: absolute;
+    display: flex;
+    left: 25%;
+    top: 30%;
+    flex-direction: column;
+    width: 50%;
+    justify-items: center;
+    border-radius: 5px;
+    border: 1px solid lightcyan;
+    padding: 10px;
+    background-color: rgb(75, 75, 75);
+}
+
+.input-box-title{
+    text-align: center;
+}
+
+.sign-up-page input{
+    height: 30px;
+    border-radius: 5px;
+    width: 100%;
+    background-color: lightcyan;
+    margin: auto;
+    padding: 5px;
+    font-size: larger;
+}
+
+.sign-up-page div{
+    margin-left: 3%;
+    width: 90%;
+}
+
+
+
+.sign-up-button{
+    width: 33%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 10px;
+    border-radius: 5px;
+    background-color: lightgray
+}

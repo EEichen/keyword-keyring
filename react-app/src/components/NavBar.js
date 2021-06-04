@@ -17,6 +17,7 @@ const NavBar = ({user}) => {
   return (
     <nav className='nav-bar'>
         {!user && <div className='links'>
+          <div>
           <NavLink to="/" exact={true} activeClassName="active">
             Home
           </NavLink>
@@ -28,10 +29,14 @@ const NavBar = ({user}) => {
           <NavLink to="/sign-up" exact={true} activeClassName="active">
             Sign Up
           </NavLink>
-          <button onClick={demoLogin}>Demo</button>
+          </div>
+
+          <h2 className='welcome'>Keyword Keyring</h2>
+          <button className='demo' onClick={demoLogin}>Demo</button>
         </div>}
-        {user && <div>
+        {user && <div className='user-bar'>
           <CreateGenerator />
+          <h2 className='welcome'>Welcome to KwKr {user.username}</h2>
           <LogoutButton />
         </div>}
 

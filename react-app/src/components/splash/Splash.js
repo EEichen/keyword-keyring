@@ -8,9 +8,9 @@ const Splash = () => {
 
 
     return user ? <Redirect to='/' /> : (
-        <div>
+        <h2>
             Welcome to kwkr, the password generating app!
-        </div>
+        </h2>
     )
 }
 

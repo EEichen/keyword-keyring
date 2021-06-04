@@ -1,5 +1,9 @@
 /* TODO Add site wide styles */
 body{
-    background-color: rgb(50, 50, 50);
+    background-color: rgb(45, 40, 40);
     color: lightcyan;
+}
+
+input:focus{
+    outline: 0;
 }

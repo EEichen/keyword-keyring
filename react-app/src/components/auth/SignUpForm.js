@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { useSelector, useDispatch } from "react-redux"
 import { Redirect } from 'react-router-dom';
 import { signUp } from '../../store/session';
+import './SignUpForm.css'
 
 const SignUpForm = () => {
   const [username, setUsername] = useState("");
@@ -43,16 +44,17 @@ const SignUpForm = () => {
   }
 
   return (
-    <form onSubmit={onSignUp}>
+    <form onSubmit={onSignUp} className='sign-up-page'>
+      <h2 className='input-box-title'>Sign Up!</h2>
       <div>
         {errors.map(error => (
           <div key={error}>{error}</div>
         ))}
       </div>
       <div>
-        <label>User Name</label>
         <input
           type="text"
+          placeholder='Username'
           name="username"
           onChange={updateUsername}
           value={username}
@@ -60,36 +62,36 @@ const SignUpForm = () => {
         ></input>
       </div>
       <div>
-        <label>Email</label>
         <input
           type="email"
           name="email"
+          placeholder='Email'
           onChange={updateEmail}
           value={email}
           required={true}
         ></input>
       </div>
       <div>
-        <label>Password</label>
         <input
           type="password"
           name="password"
+          placeholder='Password'
           onChange={updatePassword}
           value={password}
           required={true}
         ></input>
       </div>
       <div>
-        <label>Repeat Password</label>
         <input
           type="password"
           name="repeat_password"
+          placeholder='Confirm Password'
           onChange={updateRepeatPassword}
           value={repeatPassword}
           required={true}
         ></input>
       </div>
-      <button type="submit">Sign Up</button>
+      <button className='sign-up-button' type="submit">Sign Up</button>
     </form>
   );
 };
