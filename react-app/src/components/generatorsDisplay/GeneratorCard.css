@@ -46,3 +46,39 @@
     justify-content: space-between;
     margin-bottom: 5px;
 }
+
+.iteration{
+    display: flex;
+}
+
+.iterator-label{
+    margin-right: 5px;
+    text-align: center;
+    padding: 5px;
+}
+
+.iteration-display{
+    /* margin-right: 5px;
+    margin-left: 5px; */
+    color: black;
+    background-color: rgb(225, 205, 190);
+    text-align: center;
+    padding: 5px;
+    justify-self: center;
+}
+
+.iteration button{
+    padding-left: 10px;
+    padding-right: 10px;
+    border-right: 1px solid rgba(0, 0, 0, .1);
+    border-left: 1px solid rgba(0, 0, 0, .1);
+}
+
+.decrement{
+    border-radius: 5px 0 0px 5px;
+}
+
+.increment{
+    border-radius: 0px 5px 5px 0px;
+}
+

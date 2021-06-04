@@ -13,6 +13,7 @@ button{
     cursor: pointer;
     background-color: rgb(225, 205, 190);
     border-radius: 5px;
+    border: none;
 }
 
 button:hover{

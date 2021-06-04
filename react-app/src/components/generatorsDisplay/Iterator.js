@@ -3,10 +3,10 @@ import React from 'react'
 const Iterator = ({iteration, increment, decrement}) => {
     return(
         <div className='iteration'>
-            <div>Iterator</div>
-            <button onClick={increment}>+</button>
+            <div className='iterator-label'>Iterator:</div>
+            <button className='decrement' onClick={decrement}>-</button>
             <div className='iteration-display'>{iteration}</div>
-            <button onClick={decrement}>-</button>
+            <button className='increment' onClick={increment}>+</button>
         </div>
     )
 }

@@ -47,12 +47,12 @@ const GeneratorCard = ({generator}) => {
                 </div>
                 <div className='leftside-gen-buttons'>
                     <button>Generate</button>
+                    <Iterator 
+                    iteration={generator.iteration}
+                    increment={increment}
+                    decrement={decrement}
+                    />
                     <button>copy</button>
-                <Iterator 
-                iteration={generator.iteration}
-                increment={increment}
-                decrement={decrement}
-                />
                 </div>
             </div>
 
