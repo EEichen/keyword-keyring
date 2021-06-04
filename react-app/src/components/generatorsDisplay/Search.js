@@ -20,11 +20,11 @@ const Search = () => {
     }, [input, dispatch])
 
     return(
-        <div>
+        <div className='search'>
             <input 
             type="text"
             value={input}
-            placeholder='Search! 🔍'
+            placeholder='🔎 Search'
             onChange={handleSearch}
             />
             <button onClick={e => setInput('')}>Clear</button>

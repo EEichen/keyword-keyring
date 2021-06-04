@@ -12,10 +12,11 @@ const GeneratorsDisplay = () => {
     if(generators){
         return (
             <div>
-                <div className='input display'>
+                <div className='input-display'>
                     <div className='kw-with-gen'>
                         <div>
-                        kw input placeholder
+                        <input type="text" />
+                        <button>generate all ph</button>
                         </div>
                     </div>
                     <div>

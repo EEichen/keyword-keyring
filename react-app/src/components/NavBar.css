@@ -14,13 +14,14 @@ a:hover{
 }
 
 .nav-bar{
-    width: 98%;
-    background-color: rgb(100, 100, 100);
+    width: 99%;
+    background-color: rgb(75, 75, 75);
     padding: 5px;
     border-radius: 10px;
     max-height: 50px;
     min-height: 50px;
     height: 50px;
+    box-shadow: 0px 0px 3px lightcyan;
 }
 
 .links{
@@ -35,10 +36,10 @@ a:hover{
 margin-left: 20%;
 } */
 
-.demo:hover{
+/* .demo:hover{
     box-shadow: 0px 0px 3px;
     background-color: rgba(255, 255, 255, .01);
-}
+} */
 
 .user-bar{
     display: flex;

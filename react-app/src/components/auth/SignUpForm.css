@@ -8,7 +8,7 @@
     width: 50%;
     justify-items: center;
     border-radius: 5px;
-    border: 1px solid lightcyan;
+    box-shadow: 0px 0px 3px lightcyan;
     padding: 10px;
     background-color: rgb(75, 75, 75);
 }
@@ -21,7 +21,6 @@
     height: 30px;
     border-radius: 5px;
     width: 100%;
-    background-color: lightcyan;
     margin: auto;
     padding: 5px;
     font-size: larger;
@@ -41,6 +40,5 @@
     margin-right: auto;
     margin-top: 10px;
     border-radius: 5px;
-    background-color: lightgray;
     font-size: large;
 }
