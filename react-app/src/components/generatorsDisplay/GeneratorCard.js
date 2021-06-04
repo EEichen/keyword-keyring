@@ -35,15 +35,25 @@ const GeneratorCard = ({generator}) => {
     return(
         <div className='gen-card' id={`generator-${generator.id}`}>
             <div className='card-leftside'>
-                <div className='gen-title'>{generator.title}</div>
-                <div className='pw-display'>ph pw display</div>
-                <button>Generate</button>
-                <button>copy</button>
+                <p className='gen-title'>{generator.title}</p>
+                <div className='pw'>
+                <label  htmlFor='pwdisplay' className='gen-label'>Password:</label>
+                <input 
+                type='text' 
+                id='pwdisplay'
+                className='pw-display' 
+                disabled 
+                value='random looooooooooooooooooooooooooooooooong string'></input>
+                </div>
+                <div className='leftside-gen-buttons'>
+                    <button>Generate</button>
+                    <button>copy</button>
                 <Iterator 
                 iteration={generator.iteration}
                 increment={increment}
                 decrement={decrement}
                 />
+                </div>
             </div>
 
             <div className='card-rightside'>

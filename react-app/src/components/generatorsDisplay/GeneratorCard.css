@@ -6,4 +6,43 @@
     margin: 10px;
     padding: 10px;
     background-color: rgb(75, 75, 75);
+    width: 96%;
+}
+
+.card-leftside{
+    display: flex;
+    flex-direction: column;
+    flex-basis: content;
+    
+}
+
+.pw-display{
+    height: 30px;
+    border-radius: 5px;
+    width: 100%;
+    font-size: x-large;
+    cursor:text;
+
+}
+
+.gen-title{
+    margin: 5px;
+    margin-bottom: 10px;
+    font-size: xx-large;
+}
+
+.gen-label{
+    margin: 5px;
+    margin-bottom: 10px;
+    font-size: x-large;
+}
+
+.pw{
+    display: flex;
+}
+
+.leftside-gen-buttons{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 5px;
 }
