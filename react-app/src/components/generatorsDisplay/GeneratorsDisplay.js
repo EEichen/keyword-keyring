@@ -12,11 +12,15 @@ const GeneratorsDisplay = () => {
     if(generators){
         return (
             <div>
-                <div>
-                kw input placeholder
-                </div>
-                <div>
-                    <Search />
+                <div className='input display'>
+                    <div className='kw-with-gen'>
+                        <div>
+                        kw input placeholder
+                        </div>
+                    </div>
+                    <div>
+                        <Search />
+                    </div>
                 </div>
 
                 {generators.message ? <div className='found-none'>

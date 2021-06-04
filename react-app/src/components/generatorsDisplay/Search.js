@@ -24,6 +24,7 @@ const Search = () => {
             <input 
             type="text"
             value={input}
+            placeholder='Search! 🔍'
             onChange={handleSearch}
             />
             <button onClick={e => setInput('')}>Clear</button>

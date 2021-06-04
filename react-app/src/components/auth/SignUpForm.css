@@ -36,9 +36,11 @@
 
 .sign-up-button{
     width: 33%;
+    min-height: 30px;
     margin-left: auto;
     margin-right: auto;
     margin-top: 10px;
     border-radius: 5px;
-    background-color: lightgray
+    background-color: lightgray;
+    font-size: large;
 }
