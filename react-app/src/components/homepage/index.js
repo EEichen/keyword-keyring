@@ -12,9 +12,7 @@ const Homepage = () => {
     }, [dispatch])
 
     return (
-        <div>
-            <GeneratorsDisplay />
-        </div>
+        <GeneratorsDisplay />
     )
 }
 

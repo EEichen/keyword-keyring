@@ -15,16 +15,16 @@ const NewGeneratorForm = ({setOpen}) => {
     return (
         <div className='new-gen-input'>
             <div className='new-gen-title'>New Generator</div>
-            <input 
-            type="text" 
-            placeholder='Generator Title'
-            className='title-input'
-            value={title}
-            onChange={e => setTitle(e.target.value)}
-            />
+                <input 
+                type="text" 
+                placeholder='Generator Title'
+                className='title-input'
+                value={title}
+                onChange={e => setTitle(e.target.value)}
+                />
             <div className='new-gen-buttons'>
-            <button onClick={handleCreate}>Create!</button>
-            <button onClick={e => setOpen(false)}>Cancel</button>
+                <button onClick={handleCreate}>Create!</button>
+                <button onClick={e => setOpen(false)}>Cancel</button>
             </div>
         </div>
     )

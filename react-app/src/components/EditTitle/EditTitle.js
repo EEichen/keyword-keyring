@@ -25,15 +25,20 @@ const EditTitle = ({generator}) => {
     return (
         <div>
             <button onClick={openEditTitle}>Edit generator</button>
-            {open && <div className='edit-title-form'>
-                <input
-                    type="text"
-                    placeholder='Generator Title'
-                    className='title-input'
-                    value={title}
-                    onChange={e => setTitle(e.target.value)}
-                />
-                <button onClick={handleEdit}>Save!</button>
+            {open && <div className='new-gen-form'>
+                <div className='new-gen-input'>
+                    <input
+                        type="text"
+                        placeholder='Generator Title'
+                        className='title-input'
+                        value={title}
+                        onChange={e => setTitle(e.target.value)}
+                        />
+                    <div className='new-gen-buttons'>
+                        <button onClick={handleEdit}>Save!</button>
+                        <button onClick={e => setOpen(false)}>Cancel</button>
+                    </div>
+                </div>
             </div>}
         </div>
     )

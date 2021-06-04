@@ -11,7 +11,7 @@ const GeneratorsDisplay = () => {
 
     if(generators){
         return (
-            <div>
+            <div className='display-area'>
                 <div className='input-display'>
                     <div className='kw-with-gen'>
                         <div>
