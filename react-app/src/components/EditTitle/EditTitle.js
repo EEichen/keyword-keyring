@@ -24,7 +24,7 @@ const EditTitle = ({generator}) => {
 
     return (
         <div>
-            <button onClick={openEditTitle}>Edit generator</button>
+            <button onClick={openEditTitle}>Edit Generator</button>
             {open && <div className='new-gen-form'>
                 <div className='new-gen-input'>
                     <input

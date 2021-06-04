@@ -57,13 +57,13 @@ const GeneratorCard = ({generator}) => {
             </div>
 
             <div className='card-rightside'>
-                <button onClick={e => setShowConstraints(prev => !prev)}>edit constraints</button>
+                <button onClick={e => setShowConstraints(prev => !prev)}>Edit Constraints</button>
                 {showConstraints && <ConstraintsDisplay
                     constraints={generator.constraints} 
                     setShowConstraints={setShowConstraints}
                     />}
                 <EditTitle generator={generator} />
-                <button onClick={handleDeleteGen}>delete generator</button>
+                <button onClick={handleDeleteGen}>Delete Generator</button>
             </div>
 
         </div>
