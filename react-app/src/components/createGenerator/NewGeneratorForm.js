@@ -14,6 +14,7 @@ const NewGeneratorForm = ({setOpen}) => {
 
     return (
         <div className='new-gen-input'>
+            <div className='new-gen-title'>New Generator</div>
             <input 
             type="text" 
             placeholder='Generator Title'
