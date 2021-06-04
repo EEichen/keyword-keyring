@@ -30,7 +30,7 @@ export const getGenerators = () => async (dispatch) => {
 
     if(res.ok){
         const generators = await res.json()
-        console.log(generators)
+        // console.log(generators)
         dispatch(populateGenerators(generators))
         return {}
     }
@@ -47,7 +47,7 @@ export const createGenerator= (title) => async (dispatch) =>{
     })
 
     const generator = await res.json()
-    console.log(generator)
+    // console.log(generator)
     dispatch(addGenerator(generator))
     return {}
 }
@@ -66,7 +66,7 @@ export const editGenerator = (generator) => async (dispatch) => {
     })
 
     const newGenerator = await res.json()
-    console.log(newGenerator)
+    // console.log(newGenerator)
     dispatch(addGenerator(newGenerator))
     return {}
 }
@@ -110,7 +110,7 @@ export const searchGenerators = (input) => async (dispatch) => {
     const res = await fetch(`/api/search/${input}`)
 
     const generators = await res.json()
-    console.log(generators)
+    // console.log(generators)
     dispatch(populateGenerators(generators))
     return {}
 

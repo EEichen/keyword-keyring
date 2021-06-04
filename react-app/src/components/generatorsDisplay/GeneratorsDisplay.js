@@ -2,6 +2,7 @@ import React from 'react';
 import { useSelector } from 'react-redux';
 import GeneratorCard from './GeneratorCard';
 import './GeneratorDisplay.css'
+import Search from './Search';
 
 
 const GeneratorsDisplay = () => {
@@ -15,7 +16,7 @@ const GeneratorsDisplay = () => {
                 kw input placeholder
                 </div>
                 <div>
-                    search input placeholder
+                    <Search
                 </div>
 
                 <div className='display-gens'>
