@@ -13,7 +13,7 @@ const NewGeneratorForm = ({setOpen}) => {
     }
 
     return (
-        <div>
+        <div className='new-gen-input'>
             <input 
             type="text" 
             placeholder='Generator Title'
@@ -21,7 +21,10 @@ const NewGeneratorForm = ({setOpen}) => {
             value={title}
             onChange={e => setTitle(e.target.value)}
             />
+            <div className='new-gen-buttons'>
             <button onClick={handleCreate}>Create!</button>
+            <button onClick={e => setOpen(false)}>Cancel</button>
+            </div>
         </div>
     )
 }

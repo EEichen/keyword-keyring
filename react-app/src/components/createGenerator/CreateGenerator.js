@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import NewGeneratorForm from './NewGeneratorForm'
+import './CreateGenerator.css'
 
 const CreateGenerator = () => {
     const [open, setOpen] = useState(false)
