@@ -19,11 +19,13 @@ const GeneratorsDisplay = () => {
                     <Search />
                 </div>
 
-                <div className='display-gens'>
+                {generators.message ? <div className='found-none'>
+                    {generators.message}
+                </div> : <div className='display-gens'>
                     {Object.values(generators).map(generator => (
                         <GeneratorCard key={generator.id} generator={generator} />
                     ))}
-                </div>
+                </div>}
 
             </div>
         )
