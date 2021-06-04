@@ -16,7 +16,7 @@ const GeneratorsDisplay = () => {
                 kw input placeholder
                 </div>
                 <div>
-                    <Search
+                    <Search />
                 </div>
 
                 <div className='display-gens'>
