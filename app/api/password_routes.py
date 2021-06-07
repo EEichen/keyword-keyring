@@ -23,7 +23,7 @@ def final_seed_creator(generator, pw_length, keyword):
 
 def select_character_string(final_seed, strings):
     random.seed(final_seed)
-    selector = random.randint(0, len(strings))
+    selector = random.randint(0, len(strings) - 1)
 
     return strings[selector]
 
@@ -80,6 +80,8 @@ def generate_password(generator, keyword):
             required_numbers -= 1
         elif selected_string == symbols and required_symbols > 0:
             required_symbols -= 1
+
+        return selected_string
 
     return final_seed
 
