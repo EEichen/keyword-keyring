@@ -39,6 +39,10 @@ const GeneratorCard = ({generator, keyword}) => {
 
     }
 
+    const copyToClipboard = (e) => {
+        navigator.clipboard.writeText(password)
+    }
+
     return(
         <div className='gen-card' id={`generator-${generator.id}`}>
             <div className='card-leftside'>
@@ -59,7 +63,7 @@ const GeneratorCard = ({generator, keyword}) => {
                     increment={increment}
                     decrement={decrement}
                     />
-                    <button>copy</button>
+                    <button onClick={copyToClipboard}>copy</button>
                 </div>
             </div>
 
