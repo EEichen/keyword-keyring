@@ -28,7 +28,7 @@ const GeneratorsDisplay = () => {
                         value={keyword}
                         onChange={e => setKeyword(e.target.value)}
                         />
-                        <button onClick={generateAllPasswords}>generate all ph</button>
+                        <button disabled={!keyword} onClick={generateAllPasswords}>Generate All</button>
                         </div>
                     </div>
                     <div>

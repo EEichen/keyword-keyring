@@ -57,7 +57,7 @@ const GeneratorCard = ({generator, keyword}) => {
                 value={password}></input>
                 </div>
                 <div className='leftside-gen-buttons'>
-                    <button onClick={generatePw} >Generate</button>
+                    <button disabled={!keyword} onClick={generatePw} >Generate</button>
                     <Iterator 
                     iteration={generator.iteration}
                     increment={increment}
