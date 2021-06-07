@@ -24,6 +24,9 @@ def get_generators():
 def create_generator():
     data = request.json
 
+    print('keyword')
+    print(dir(current_user))
+
     # note! replace seed 1 with actual seed later
     generator = Generator(
         title=data['title'],
