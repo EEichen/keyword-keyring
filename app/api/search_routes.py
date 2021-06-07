@@ -25,4 +25,4 @@ def search_gen(user_input):
             generator.id: generator.to_dict() for generator in fnd_generators
             }
 
-    return {"message": "none found"}
+    return {"message": "No Generators Found"}

@@ -46,3 +46,9 @@
 .input-display > div{
     width: 35%;
 }
+
+.found-none{
+text-align: center;
+font-size: xx-large;
+font-weight: bold;
+}
