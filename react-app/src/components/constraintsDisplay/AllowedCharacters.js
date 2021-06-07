@@ -12,7 +12,9 @@ const AllowedCharacters = ({
     setSymbols,
     }) => {
     return (
-        <div>
+        <div className='allowed-characters'>
+            <h3>Allowed characters</h3>
+            <div>
             <label htmlFor="lowercase">Lowercase</label>
             <input 
             id='lowercase'
@@ -20,30 +22,37 @@ const AllowedCharacters = ({
             value={lowercase}
             onChange={e => setLowercase(e.target.value)}
             />
+            </div>
 
+            <div>
             <label htmlFor="uppercase">Uppercase</label>
             <input
                 id='uppercase'
                 type="text"
                 value={uppercase}
                 onChange={e => setUppercase(e.target.value)}
-            />
+                />
+            </div>
 
+            <div>
             <label htmlFor="numbers">Numbers</label>
             <input
                 id='numbers'
                 type="text"
                 value={numbers}
                 onChange={e => setNumbers(e.target.value)}
-            />
+                />
+            </div>
 
+            <div>
             <label htmlFor="symbols">Symbols</label>
             <input
                 id='symbols'
                 type="text"
                 value={symbols}
                 onChange={e => setSymbols(e.target.value)}
-            />
+                />
+            </div>
         </div>
     )
 }

@@ -4,6 +4,7 @@ import { changeConstriants } from '../../store/generators'
 import AllowedCharacters from './AllowedCharacters'
 import PasswordLength from './PWLength'
 import RequiredCharacters from './RequiredCharacters'
+import './ConstraintsDisplay.css'
 
 
 const ConstraintsDisplay = ({constraints, setShowConstraints}) => {
@@ -37,42 +38,47 @@ const ConstraintsDisplay = ({constraints, setShowConstraints}) => {
     }
 
     return(
-        <div className='constraints-display'>
-            <div className='constraints simple'>
-                <div className='allow-dups'>
-                    allow duplicates
-                    <input
-                    type="checkbox"
-                    checked={duplicates}
-                    onChange={e => setDuplicates(e.target.checked)}
+        <div className='new-gen-form'>
+            <div className='constraints-display'>
+                <div className='constraints simple'>
+                    <div className='allow-dups'>
+                        allow duplicates
+                        <input
+                        type="checkbox"
+                        checked={duplicates}
+                        onChange={e => setDuplicates(e.target.checked)}
+                        />
+                        <PasswordLength pwLength={pwLength} setPwLength={setPwLength} />
+                    </div>
+                </div>
+                <div className='constraints req-char'>
+                    <RequiredCharacters
+                        reqUppercase={reqUppercase}
+                        reqNumbers={reqNumbers}
+                        reqSymbols={reqSymbols}
+                        setReqUppercase={setReqUppercase}
+                        setReqNumbers={setReqNumbers}
+                        setReqSymbols={setReqSymbols}
                     />
-                    <PasswordLength pwLength={pwLength} setPwLength={setPwLength} />
+                </div>
+                <div className='constraints allowed-char'>
+                    <AllowedCharacters
+                        lowercase={lowercase}
+                        uppercase={uppercase}
+                        numbers={numbers}
+                        symbols={symbols}
+                        setLowercase={setLowercase}
+                        setUppercase={setUppercase}
+                        setNumbers={setNumbers}
+                        setSymbols={setSymbols}
+                    />
+                </div>
+
+                <div className='new-gen-buttons'>
+                    <button onClick={handleSave}>Save!</button>
+                    <button onClick={e => setShowConstraints(false)} >Cancel</button>
                 </div>
             </div>
-            <div className='constraints req-char'>
-                <RequiredCharacters
-                    reqUppercase={reqUppercase}
-                    reqNumbers={reqNumbers}
-                    reqSymbols={reqSymbols}
-                    setReqUppercase={setReqUppercase}
-                    setReqNumbers={setReqNumbers}
-                    setReqSymbols={setReqSymbols}
-                />
-            </div>
-            <div className='constraints allowed-char'>
-                <AllowedCharacters
-                    lowercase={lowercase}
-                    uppercase={uppercase}
-                    numbers={numbers}
-                    symbols={symbols}
-                    setLowercase={setLowercase}
-                    setUppercase={setUppercase}
-                    setNumbers={setNumbers}
-                    setSymbols={setSymbols}
-                />
-            </div>
-
-            <button onClick={handleSave}>Save!</button>
         </div>
     )
 }
