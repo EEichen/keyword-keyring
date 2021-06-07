@@ -28,14 +28,23 @@ def select_character_string(final_seed, strings):
     return strings[selector]
 
 
+def select_character(final_seed, selected_string, allow_duplicates):
+    random.seed(final_seed)
+    selector = random.randint(0, len(selected_string) - 1)
+    if allow_duplicates:
+        return selected_string[selector]
+    else:
+        return selected_string.pop(selector)
+
+
 def generate_password(generator, keyword):
     seed = generator.seed
     iteration = generator.iteration
     pw_length = generator.constraints.pw_length
-    lowercase_letters = generator.constraints.lowercase_letters
-    uppercase_letters = generator.constraints.uppercase_letters
-    numbers = generator.constraints.numbers
-    symbols = generator.constraints.symbols
+    lowercase_letters = list(generator.constraints.lowercase_letters)
+    uppercase_letters = list(generator.constraints.uppercase_letters)
+    numbers = list(generator.constraints.numbers)
+    symbols = list(generator.constraints.symbols)
 
     required_uppercase = generator.constraints.required_uppercase
     required_numbers = generator.constraints.required_numbers
@@ -62,10 +71,8 @@ def generate_password(generator, keyword):
             del strings[0]
             if required_uppercase <= 0:
                 del strings[1]
-
             if required_numbers <= 0:
                 del strings[2]
-
             if required_symbols <= 0:
                 del strings[3]
 
@@ -81,9 +88,10 @@ def generate_password(generator, keyword):
         elif selected_string == symbols and required_symbols > 0:
             required_symbols -= 1
 
-        return selected_string
+        password += select_character(
+            final_seed, selected_string, allow_duplicates)
 
-    return final_seed
+    return password
 
 
 @password_routes.route('/', methods=['POST'])
