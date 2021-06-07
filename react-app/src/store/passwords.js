@@ -1,6 +1,7 @@
 //actions-----------------------------------------------------------------------
 const GENERATE_ALL = 'passwords/GENERATE_ALL'
 const GENERATE_ONE = 'passwords/GENERATE_ONE'
+const CLEAR_PASSWORDS = 'passwords/CLEAR_PASSWORDS'
 
 const generateAll = (passwords) => ({
     type: GENERATE_ALL,
@@ -10,6 +11,10 @@ const generateAll = (passwords) => ({
 const generateOne = (password) => ({
     type: GENERATE_ONE,
     password
+})
+
+export const clearPasswords = () => ({
+    type: CLEAR_PASSWORDS
 })
 
 //thunks------------------------------------------------------------------------
@@ -53,6 +58,8 @@ export default function passwordsReducer(state = initialState, action){
         case GENERATE_ONE:
             let newState = {...state, [action.password.id]: action.password.password}
             return newState
+        case CLEAR_PASSWORDS:
+            return {}
         default:
             return state
     }

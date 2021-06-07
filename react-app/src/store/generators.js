@@ -3,6 +3,7 @@ const POPULATE_GENERATORS = 'generators/POPULATE_GENERATORS'
 const ADD_GENERATOR = 'generators/ADD_GENERATOR'
 const REMOVE_GENERATOR = 'generators/REMOVE_GENERATOR'
 const EDIT_CONSTRAINTS = 'generators/EDIT_CONSTRAINTS'
+const CLEAR_GENERATORS = 'generators/CLEAR_GENERATORS'
 
 const populateGenerators = (generators) => ({
     type: POPULATE_GENERATORS,
@@ -24,6 +25,12 @@ const editConstraints = (constraints, genId) => ({
     constraints,
     genId
 })
+
+export const clearGenerators = () =>({
+    type: CLEAR_GENERATORS
+})
+
+
 //thunks------------------------------------------------------------------------
 export const getGenerators = () => async (dispatch) => {
     const res = await fetch('/api/generators/')
@@ -136,6 +143,8 @@ export default function generatorsReducer(state = initialState, action){
             newState = {...state}
             newState[action.genId].constraints = action.constraints
             return newState
+        case CLEAR_GENERATORS:
+            return {}
         default:
             return state
     }

@@ -1,3 +1,6 @@
+import { clearGenerators } from "./generators";
+import { clearPasswords } from "./passwords";
+
 // constants
 const SET_USER = "session/SET_USER";
 const REMOVE_USER = "session/REMOVE_USER";
@@ -56,6 +59,8 @@ export const authenticate = () => async (dispatch) => {
     
     const data = await response.json();
     dispatch(removeUser());
+    dispatch(clearGenerators())
+    dispatch(clearPasswords)
 
     return data
   };
