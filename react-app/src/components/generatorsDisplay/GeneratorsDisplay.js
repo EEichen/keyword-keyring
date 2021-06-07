@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useSelector } from 'react-redux';
 import GeneratorCard from './GeneratorCard';
 import './GeneratorDisplay.css'
@@ -7,6 +7,7 @@ import Search from './Search';
 
 const GeneratorsDisplay = () => {
     const generators = useSelector(state => state.generators)
+    const [keyword, setKeyword] = useState('')
 
 
     if(generators){
@@ -15,7 +16,12 @@ const GeneratorsDisplay = () => {
                 <div className='input-display'>
                     <div className='kw-with-gen'>
                         <div>
-                        <input type="text" />
+                        <input 
+                        type="text" 
+                        placeholder='keyword'
+                        value={keyword}
+                        onChange={e => setKeyword(e.target.value)}
+                        />
                         <button>generate all ph</button>
                         </div>
                     </div>
