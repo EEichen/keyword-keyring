@@ -48,13 +48,14 @@ const GeneratorCard = ({generator, keyword}) => {
             <div className='card-leftside'>
                 <p className='gen-title'>{generator.title}</p>
                 <div className='pw'>
-                <label  htmlFor='pwdisplay' className='gen-label'>Password:</label>
+                <label  htmlFor={`pwdisplay-${generator.id}`} className='gen-label'>Password:</label>
                 <input 
                 type='text' 
-                id='pwdisplay'
+                id={`pwdisplay-${generator.id}`}
                 className='pw-display' 
                 disabled 
-                value={password}></input>
+                value={password ? password: ''}
+                ></input>
                 </div>
                 <div className='leftside-gen-buttons'>
                     <button disabled={!keyword} onClick={generatePw} >Generate</button>

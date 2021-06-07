@@ -20,7 +20,6 @@ class Generator(db.Model):
         return {
             "id": self.id,
             "title": self.title,
-            "seed": self.seed,
             "iteration": self.iteration,
             "user_id": self.user_id,
             "constraints": self.constraints.to_dict()

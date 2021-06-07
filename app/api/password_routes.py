@@ -14,8 +14,18 @@ def keyword_to_number(kw):
     return number
 
 
+def final_seed_creator(gen_seed, pw_length, keyword, iteration):
+    iteration_modifier = pw_length * iteration
+    return gen_seed + keyword_to_number(keyword) + iteration_modifier
+
+
 def generate_password(generator, keyword):
-    return str(generator.seed) + str(keyword)
+
+    return final_seed_creator(
+        generator.seed,
+        generator.constraints.pw_length,
+        keyword,
+        generator.iteration)
 
 
 @password_routes.route('/', methods=['POST'])
