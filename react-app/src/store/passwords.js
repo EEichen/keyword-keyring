@@ -29,7 +29,7 @@ export const generatePasswords = (keyword) => async (dispatch) => {
     })
 
     const passwords = await res.json()
-    console.log(passwords)
+    // console.log(passwords)
     dispatch(generateAll(passwords))
 }
 
@@ -44,7 +44,7 @@ export const generateOnePassword = (keyword, id) => async (dispatch) => {
     })
 
     const password = await res.json()
-    console.log(password)
+    // console.log(password)
     dispatch(generateOne(password))
 }
 
