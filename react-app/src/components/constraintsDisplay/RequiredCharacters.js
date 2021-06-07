@@ -11,7 +11,8 @@ const RequiredCharacters = ({
 }) => {
 
     return (
-        <div>
+        <div className='required-characters'>
+            <h4>Number of Required Characters</h4>
             <div>
                 <label htmlFor="req-uppercase">Required uppercase</label>
                 <input

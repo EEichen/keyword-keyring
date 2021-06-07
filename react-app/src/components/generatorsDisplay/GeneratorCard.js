@@ -61,6 +61,7 @@ const GeneratorCard = ({generator}) => {
                 {showConstraints && <ConstraintsDisplay
                     constraints={generator.constraints} 
                     setShowConstraints={setShowConstraints}
+                    title={generator.title}
                     />}
                 <EditTitle generator={generator} />
                 <button onClick={handleDeleteGen}>Delete Generator</button>

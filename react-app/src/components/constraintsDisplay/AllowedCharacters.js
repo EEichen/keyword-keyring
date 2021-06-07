@@ -13,7 +13,7 @@ const AllowedCharacters = ({
     }) => {
     return (
         <div className='allowed-characters'>
-            <h3>Allowed characters</h3>
+            <h4>Allowed characters</h4>
             <div>
             <label htmlFor="lowercase">Lowercase</label>
             <input 
