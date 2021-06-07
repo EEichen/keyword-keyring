@@ -21,8 +21,11 @@ def final_seed_creator(generator, pw_length, keyword):
     return seed + keyword_to_number(keyword) + iteration_modifier
 
 
-def select_character_string(final_seed):
-    pass
+def select_character_string(final_seed, strings):
+    random.seed(final_seed)
+    selector = random.randint(0, len(strings))
+
+    return strings[selector]
 
 
 def generate_password(generator, keyword):
@@ -40,8 +43,10 @@ def generate_password(generator, keyword):
     allow_duplicates = generator.constraints.allow_duplicates
 
     final_seed = final_seed_creator(generator, pw_length, keyword)
+    password = ''
 
     for i in range(0, pw_length):
+        final_seed += i
         total_required = (
             required_uppercase +
             required_numbers +
@@ -54,14 +59,27 @@ def generate_password(generator, keyword):
             3: symbols}
 
         if total_required >= pw_length - i:
-            strings.pop(0)
-            if required_uppercase > 0:
-                pass
+            del strings[0]
+            if required_uppercase <= 0:
+                del strings[1]
 
-        string = select_character_string(
+            if required_numbers <= 0:
+                del strings[2]
+
+            if required_symbols <= 0:
+                del strings[3]
+
+        selected_string = select_character_string(
             final_seed,
-
+            list(strings.values())
             )
+
+        if selected_string == uppercase_letters and required_uppercase < 0:
+            required_uppercase -= 1
+        elif selected_string == numbers and required_numbers > 0:
+            required_numbers -= 1
+        elif selected_string == symbols and required_symbols > 0:
+            required_symbols -= 1
 
     return final_seed
 
