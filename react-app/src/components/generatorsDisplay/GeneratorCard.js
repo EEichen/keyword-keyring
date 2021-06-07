@@ -5,9 +5,10 @@ import EditTitle from '../EditTitle/EditTitle'
 import Iterator from './Iterator'
 import './GeneratorCard.css'
 import ConstraintsDisplay from '../constraintsDisplay/ConstraintsDisplay'
+import { generateOnePassword } from '../../store/passwords'
 
 
-const GeneratorCard = ({generator}) => {
+const GeneratorCard = ({generator, keyword}) => {
     const dispatch = useDispatch()
     const [showConstraints, setShowConstraints] = useState(false)
     const password = useSelector(state => state.passwords[generator.id])
@@ -33,6 +34,11 @@ const GeneratorCard = ({generator}) => {
         dispatch(deleteGenerator(generator.id))
     }
 
+    const generatePw = () =>{
+        dispatch(generateOnePassword(keyword, generator.id))
+
+    }
+
     return(
         <div className='gen-card' id={`generator-${generator.id}`}>
             <div className='card-leftside'>
@@ -47,7 +53,7 @@ const GeneratorCard = ({generator}) => {
                 value={password}></input>
                 </div>
                 <div className='leftside-gen-buttons'>
-                    <button>Generate</button>
+                    <button onClick={generatePw} >Generate</button>
                     <Iterator 
                     iteration={generator.iteration}
                     increment={increment}
