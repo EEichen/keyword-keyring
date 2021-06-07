@@ -81,7 +81,7 @@ def generate_password(generator, keyword):
             list(strings.values())
             )
 
-        if selected_string == uppercase_letters and required_uppercase < 0:
+        if selected_string == uppercase_letters and required_uppercase > 0:
             required_uppercase -= 1
         elif selected_string == numbers and required_numbers > 0:
             required_numbers -= 1
