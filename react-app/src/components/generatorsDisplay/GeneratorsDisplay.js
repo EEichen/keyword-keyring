@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
+import { generatePasswords } from '../../store/passwords';
 import GeneratorCard from './GeneratorCard';
 import './GeneratorDisplay.css'
 import Search from './Search';
@@ -8,6 +9,11 @@ import Search from './Search';
 const GeneratorsDisplay = () => {
     const generators = useSelector(state => state.generators)
     const [keyword, setKeyword] = useState('')
+    const dispatch = useDispatch()
+
+    const generateAllPasswords = () => {
+        dispatch(generatePasswords(keyword))
+    }
 
 
     if(generators){
@@ -22,7 +28,7 @@ const GeneratorsDisplay = () => {
                         value={keyword}
                         onChange={e => setKeyword(e.target.value)}
                         />
-                        <button>generate all ph</button>
+                        <button onClick={generateAllPasswords}>generate all ph</button>
                         </div>
                     </div>
                     <div>
@@ -34,7 +40,10 @@ const GeneratorsDisplay = () => {
                     {generators.message}
                 </div> : <div className='display-gens'>
                     {Object.values(generators).map(generator => (
-                        <GeneratorCard key={generator.id} generator={generator} />
+                        <GeneratorCard 
+                        key={generator.id}
+                        generator={generator} 
+                        keyword={keyword}/>
                     ))}
                 </div>}
 

@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { useDispatch } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
 import { deleteGenerator, editGenerator } from '../../store/generators'
 import EditTitle from '../EditTitle/EditTitle'
 import Iterator from './Iterator'
@@ -10,6 +10,7 @@ import ConstraintsDisplay from '../constraintsDisplay/ConstraintsDisplay'
 const GeneratorCard = ({generator}) => {
     const dispatch = useDispatch()
     const [showConstraints, setShowConstraints] = useState(false)
+    const password = useSelector(state => state.passwords[generator.id])
 
 
     const increment = () => {
@@ -43,7 +44,7 @@ const GeneratorCard = ({generator}) => {
                 id='pwdisplay'
                 className='pw-display' 
                 disabled 
-                value='random looooooooooooooooooooooooooooooooong string'></input>
+                value={password}></input>
                 </div>
                 <div className='leftside-gen-buttons'>
                     <button>Generate</button>

@@ -15,7 +15,7 @@ def keyword_to_number(kw):
 
 
 def generate_password(generator, keyword):
-    return str(generator.seed)
+    return str(generator.seed) + str(keyword)
 
 
 @password_routes.route('/', methods=['POST'])
