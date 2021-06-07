@@ -1,0 +1,22 @@
+.blurb{
+    text-align: center;
+
+}
+
+.splash{
+    /* background-image: url(../../images/keyring.svg); */
+    width: 80vw;
+    height: 80vh;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.kr-img{
+    max-width: 500px;
+    max-height: 500px;
+    align-self: center;
+
+}
