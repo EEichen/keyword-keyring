@@ -23,9 +23,12 @@ def get_generators():
 @login_required
 def create_generator():
     data = request.json
+    seed_start = current_user.hashed_password[-5:]
 
-    print('keyword')
-    print(dir(current_user))
+    ini_seed = 0
+
+    for i in seed_start:
+        ini_seed += ord(i)
 
     # note! replace seed 1 with actual seed later
     generator = Generator(
@@ -33,7 +36,6 @@ def create_generator():
         seed=1,
         user_id=current_user.id
     )
-
     # # test generator generation
     # generator = Generator(
     #     title=data['title'],
@@ -43,6 +45,15 @@ def create_generator():
 
     db.session.add(generator)
     db.session.commit()
+
+    seed = int(str(current_user.id) + str(generator.id) + str(ini_seed))
+
+    print('keyword')
+    print(seed)
+
+    generator.seed = seed
+
+    db.session.add(generator)
 
     constraints = Constraints(generator_id=generator.id)
     db.session.add(constraints)
