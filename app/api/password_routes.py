@@ -14,18 +14,56 @@ def keyword_to_number(kw):
     return number
 
 
-def final_seed_creator(gen_seed, pw_length, keyword, iteration):
+def final_seed_creator(generator, pw_length, keyword):
+    iteration = generator.iteration
+    seed = generator.seed
     iteration_modifier = pw_length * iteration
-    return gen_seed + keyword_to_number(keyword) + iteration_modifier
+    return seed + keyword_to_number(keyword) + iteration_modifier
+
+
+def select_character_string(final_seed):
+    pass
 
 
 def generate_password(generator, keyword):
+    seed = generator.seed
+    iteration = generator.iteration
+    pw_length = generator.constraints.pw_length
+    lowercase_letters = generator.constraints.lowercase_letters
+    uppercase_letters = generator.constraints.uppercase_letters
+    numbers = generator.constraints.numbers
+    symbols = generator.constraints.symbols
 
-    return final_seed_creator(
-        generator.seed,
-        generator.constraints.pw_length,
-        keyword,
-        generator.iteration)
+    required_uppercase = generator.constraints.required_uppercase
+    required_numbers = generator.constraints.required_numbers
+    required_symbols = generator.constraints.required_symbols
+    allow_duplicates = generator.constraints.allow_duplicates
+
+    final_seed = final_seed_creator(generator, pw_length, keyword)
+
+    for i in range(0, pw_length):
+        total_required = (
+            required_uppercase +
+            required_numbers +
+            required_symbols)
+
+        strings = {
+            0: lowercase_letters,
+            1: uppercase_letters,
+            2: numbers,
+            3: symbols}
+
+        if total_required >= pw_length - i:
+            strings.pop(0)
+            if required_uppercase > 0:
+                pass
+
+        string = select_character_string(
+            final_seed,
+
+            )
+
+    return final_seed
 
 
 @password_routes.route('/', methods=['POST'])
