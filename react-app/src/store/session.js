@@ -24,9 +24,9 @@ export const authenticate = () => async (dispatch) => {
     });
     const data = await response.json();
     if (data.errors) {
+        localStorage.removeItem('keyword')
         return;
     }
-    
     dispatch(setUser(data))
   }
   
