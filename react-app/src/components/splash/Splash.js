@@ -12,7 +12,7 @@ const Splash = () => {
         <div className='splash'>
 
             <h2 className='blurb'>
-                Welcome to kwkr, the password generating app!
+                Welcome to KwKr, the password generating app!
             </h2>
             <img className='kr-img' src="images/keyring.svg" alt="keyring" />
         </div>

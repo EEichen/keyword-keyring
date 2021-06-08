@@ -7,7 +7,6 @@ const Homepage = () => {
     const dispatch = useDispatch()
 
     useEffect(() => {
-        console.log('is this running')
         dispatch(getGenerators())
     }, [dispatch])
 
