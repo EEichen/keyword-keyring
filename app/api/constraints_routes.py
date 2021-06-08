@@ -5,6 +5,23 @@ from app.models import db, Generator, Constraints
 constraints_routes = Blueprint('constraints', __name__)
 
 
+def check_characters(string, default):
+
+    characters = list(string)
+    stop = len(characters)
+
+    i = 0
+
+    while i < len(characters):
+        print(len(characters), i, characters)
+        if characters[i] not in default:
+            characters.pop(i)
+        else:
+            i += 1
+
+    return ''.join(characters)
+
+
 @constraints_routes.route('/<int:gen_id>')
 # @login_required
 def get_constraints(gen_id):
@@ -19,25 +36,33 @@ def get_constraints(gen_id):
 def edit_constraints(id):
     data = request.json
     constraints = Constraints.query.get(id)
-    print('mykeyword')
-    print('uppercase_letters' in data.keys())
+    default_lowercase = 'abcdefghijklmnopqrstuvwxyz'
+    default_uppercase = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
+    default_numbers = '1234567890'
+    default_symbols = "!# \"$%&'()*+,-./:;<=>?@[\\]^_`{|}~"
 
     if 'uppercase_letters' in data.keys():
-        constraints.uppercase_letters = data['uppercase_letters']
+        constraints.uppercase_letters = check_characters(
+            data['uppercase_letters'], default_uppercase)
 
     if 'lowercase_letters' in data.keys():
-        constraints.lowercase_letters = data['lowercase_letters']
+        constraints.lowercase_letters = check_characters(
+            data['lowercase_letters'], default_lowercase)
 
     if 'numbers' in data.keys():
-        constraints.numbers = data['numbers']
+        constraints.numbers = check_characters(
+            data['numbers'], default_numbers)
 
     if 'symbols' in data.keys():
-        constraints.symbols = data['symbols']
+        constraints.symbols = check_characters(
+            data['symbols'], default_symbols)
 
     if 'pw_length' in data.keys():
         constraints.pw_length = data['pw_length']
 
     if 'required_uppercase' in data.keys():
+        if data['required_uppercase'] < 0:
+            data['required_uppercase'] = 0
         constraints.required_uppercase = data['required_uppercase']
 
     if 'required_numbers' in data.keys():
