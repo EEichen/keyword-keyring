@@ -27,7 +27,7 @@ function App() {
   return (
     <BrowserRouter>
       <NavBar user={user}/>
-      <Footer />
+      {!user && <Footer />}
       <Route path="/" >
         {<Splash />}
       </Route>
