@@ -24,10 +24,6 @@ function App() {
     return null;
   }
 
-  if(loaded && !user){
-    localStorage.removeItem('keyword')
-  }
-
   return (
     <BrowserRouter>
       <NavBar user={user}/>

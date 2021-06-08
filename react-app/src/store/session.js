@@ -61,6 +61,7 @@ export const authenticate = () => async (dispatch) => {
     dispatch(removeUser());
     dispatch(clearGenerators())
     dispatch(clearPasswords())
+    localStorage.removeItem('keyword')
 
     return data
   };
