@@ -23,7 +23,10 @@ const ConstraintsDisplay = ({constraints, setShowConstraints, title}) => {
 
     const handleSave = () => {
         let errs = []
-        const totalRequired = reqNumbers + reqSymbols + reqUppercase
+        const totalRequired = (
+            parseInt(reqNumbers) + 
+            parseInt(reqSymbols) + 
+            parseInt(reqUppercase))
         
         console.log(totalRequired)
         console.log(pwLength)
