@@ -30,3 +30,23 @@ input{
     color: rgb(216, 87, 87);
     margin-bottom: 5px;
 }
+
+.footer{
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    background-color: rgb(75, 75, 75);
+    height: 30px;
+    padding: 5px;
+    width: 98vw;
+    margin-left: auto;
+    margin-right: auto;
+    position: absolute;
+    bottom: 10px;
+    border-radius: 10px;
+}
+
+.footer a{
+    color: lightcyan;
+    border: none;
+}

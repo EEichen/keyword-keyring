@@ -8,6 +8,7 @@ import ProtectedRoute from "./components/auth/ProtectedRoute";
 import { authenticate } from "./store/session";
 import Splash from "./components/splash/Splash";
 import Homepage from "./components/homepage";
+import Footer from "./components/Footer";
 
 function App() {
   const user = useSelector(state => state.session.user)
@@ -26,6 +27,7 @@ function App() {
   return (
     <BrowserRouter>
       <NavBar user={user}/>
+      <Footer />
       <Route path="/" >
         {<Splash />}
       </Route>
