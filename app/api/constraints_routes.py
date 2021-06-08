@@ -8,8 +8,6 @@ constraints_routes = Blueprint('constraints', __name__)
 def check_characters(string, default):
 
     characters = list(string)
-    stop = len(characters)
-
     i = 0
 
     while i < len(characters):
