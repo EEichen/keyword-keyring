@@ -10,9 +10,21 @@ const GeneratorsDisplay = () => {
     const generators = useSelector(state => state.generators)
     const [keyword, setKeyword] = useState('')
     const dispatch = useDispatch()
+    const [allowLS, setAllowLS] = useState(localStorage.getItem('allow') === 'true' ? true : false)
 
     const generateAllPasswords = () => {
         dispatch(generatePasswords(keyword))
+    }
+
+    const handleAllowLS = (e) => {
+        setAllowLS(e.target.checked)
+
+        localStorage.setItem('allow', e.target.checked)
+        // console.log(localStorage.getItem('allow') == "true")
+        // if(e.target.value){
+        // }
+        // else localStorage.setItem('allow', false)
+        
     }
 
 
@@ -29,6 +41,15 @@ const GeneratorsDisplay = () => {
                         onChange={e => setKeyword(e.target.value)}
                         />
                         <button disabled={!keyword} onClick={generateAllPasswords}>Generate All</button>
+                        <span className='ls'>Allow Local Storage: 
+                            <input 
+                            type="checkbox" 
+                            name="localStorage" 
+                            id="local-storage" 
+                            checked={allowLS}
+                            onChange={e => handleAllowLS(e)}
+                            />
+                        </span>
                         </div>
                     </div>
                     <div>
