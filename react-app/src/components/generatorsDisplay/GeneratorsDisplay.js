@@ -8,7 +8,9 @@ import Search from './Search';
 
 const GeneratorsDisplay = () => {
     const generators = useSelector(state => state.generators)
-    const [keyword, setKeyword] = useState('')
+    const [keyword, setKeyword] = useState(
+        localStorage.getItem('keyword') ? localStorage.getItem('keyword') : ''
+        )
     const dispatch = useDispatch()
     const [allowLS, setAllowLS] = useState(localStorage.getItem('allow') === 'true' ? true : false)
 
@@ -16,14 +18,21 @@ const GeneratorsDisplay = () => {
         dispatch(generatePasswords(keyword))
     }
 
+    const handleSetKeyword = (e) => {
+        setKeyword(e.target.value)
+        if(allowLS){
+            localStorage.setItem('keyword', e.target.value)
+        }
+    }
+
     const handleAllowLS = (e) => {
         setAllowLS(e.target.checked)
 
         localStorage.setItem('allow', e.target.checked)
-        // console.log(localStorage.getItem('allow') == "true")
-        // if(e.target.value){
-        // }
-        // else localStorage.setItem('allow', false)
+        if(!e.target.checked){
+            localStorage.removeItem('keyword')
+        }
+
         
     }
 
@@ -38,7 +47,7 @@ const GeneratorsDisplay = () => {
                         type="text" 
                         placeholder='keyword'
                         value={keyword}
-                        onChange={e => setKeyword(e.target.value)}
+                        onChange={e => handleSetKeyword(e)}
                         />
                         <button disabled={!keyword} onClick={generateAllPasswords}>Generate All</button>
                         <span className='ls'>Allow Local Storage: 
