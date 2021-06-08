@@ -58,17 +58,23 @@ def edit_constraints(id):
             data['symbols'], default_symbols)
 
     if 'pw_length' in data.keys():
+        if int(data['pw_length']) < 4:
+            data['pw_length'] = 4
         constraints.pw_length = data['pw_length']
 
     if 'required_uppercase' in data.keys():
-        if data['required_uppercase'] < 0:
+        if int(data['required_uppercase']) < 0:
             data['required_uppercase'] = 0
         constraints.required_uppercase = data['required_uppercase']
 
     if 'required_numbers' in data.keys():
+        if int(data['required_numbers']) < 0:
+            data['required_numbers'] = 0
         constraints.required_numbers = data['required_numbers']
 
     if 'required_symbols' in data.keys():
+        if int(data['required_symbols']) < 0:
+            data['required_symbols'] = 0
         constraints.required_symbols = data['required_symbols']
 
     if 'allow_duplicates' in data.keys():
