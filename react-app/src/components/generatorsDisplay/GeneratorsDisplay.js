@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { generatePasswords } from '../../store/passwords';
 import GeneratorCard from './GeneratorCard';
@@ -8,6 +8,7 @@ import Search from './Search';
 
 const GeneratorsDisplay = () => {
     const generators = useSelector(state => state.generators)
+    const username = useSelector(state => state.session.user.username)
     const [keyword, setKeyword] = useState(
         localStorage.getItem('keyword') ? localStorage.getItem('keyword') : ''
         )
@@ -32,9 +33,15 @@ const GeneratorsDisplay = () => {
         if(!e.target.checked){
             localStorage.removeItem('keyword')
         }
-
-        
     }
+
+    useEffect(() => {
+        if(localStorage.getItem('username') != username){
+            localStorage.removeItem('keyword')
+        }
+
+        localStorage.setItem('username', username)
+    }, [])
 
 
     if(generators){
