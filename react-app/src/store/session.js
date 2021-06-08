@@ -60,7 +60,7 @@ export const authenticate = () => async (dispatch) => {
     const data = await response.json();
     dispatch(removeUser());
     dispatch(clearGenerators())
-    dispatch(clearPasswords)
+    dispatch(clearPasswords())
 
     return data
   };
