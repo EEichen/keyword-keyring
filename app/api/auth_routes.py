@@ -68,6 +68,11 @@ def sign_up():
             email=form.data['email'],
             password=form.data['password']
         )
+        existing_user = User.query.filter(User.username == user.username).all()
+        existing_email = User.query.filter(User.email == user.email).all()
+        if len(existing_user) > 0 or len(existing_email) > 0:
+            return {'errors': ['Username or email already exists']}, 401
+
         db.session.add(user)
         db.session.commit()
         login_user(user)

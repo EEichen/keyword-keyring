@@ -25,3 +25,8 @@ button:hover{
 input{
         background-color: rgb(235, 210, 200);
 }
+
+.errors{
+    color: rgb(216, 87, 87);
+    margin-bottom: 5px;
+}

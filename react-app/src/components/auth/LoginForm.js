@@ -33,10 +33,8 @@ const LoginForm = () => {
   return (
     <form onSubmit={onLogin} className='sign-up-page'>
       <h2 className='input-box-title'>Log In!</h2>
-      <div>
-        {errors.map((error) => (
-          <div key={error} >{error}</div>
-        ))}
+      <div className='errors'>
+        {errors.length > 0 && <div>Email or password is incorrect! </div>}
       </div>
       <div>
         <input
