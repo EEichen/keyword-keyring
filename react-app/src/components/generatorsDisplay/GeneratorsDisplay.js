@@ -30,6 +30,10 @@ const GeneratorsDisplay = () => {
         setAllowLS(e.target.checked)
 
         localStorage.setItem('allow', e.target.checked)
+        if(e.target.checked && keyword){
+            localStorage.setItem('keyword', keyword)
+        }
+
         if(!e.target.checked){
             localStorage.removeItem('keyword')
         }
