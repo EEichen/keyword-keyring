@@ -49,4 +49,5 @@ input{
 .footer a{
     color: lightcyan;
     border: none;
+    margin-left: 2px;
 }
