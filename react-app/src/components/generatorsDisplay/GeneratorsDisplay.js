@@ -10,10 +10,11 @@ const GeneratorsDisplay = () => {
     const generators = useSelector(state => state.generators)
     const username = useSelector(state => state.session.user.username)
     const [keyword, setKeyword] = useState(
-        localStorage.getItem('keyword') ? localStorage.getItem('keyword') : ''
-        )
+        localStorage.getItem('keyword') ? localStorage.getItem('keyword') : '')
+
     const dispatch = useDispatch()
-    const [allowLS, setAllowLS] = useState(localStorage.getItem('allow') === 'true' ? true : false)
+    const [allowLS, setAllowLS] = useState(
+        localStorage.getItem('allow') === 'true' ? true : false)
 
     const generateAllPasswords = () => {
         dispatch(generatePasswords(keyword))
