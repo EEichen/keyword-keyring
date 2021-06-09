@@ -11,7 +11,7 @@ def check_characters(string, default):
     i = 0
 
     while i < len(characters):
-        print(len(characters), i, characters)
+        # print(len(characters), i, characters)
         if characters[i] not in default:
             characters.pop(i)
         else:
