@@ -12,7 +12,7 @@ const PasswordLength = ({pwLength, setPwLength}) =>{
                 value={pwLength}
                 onChange={e => setPwLength(e.target.value)}
                 />
-                <span className='hint pw-hint'>sets the length of the password, note that the total required characters cannot exceed the password length</span>
+                <span id='pw-hint' className='hint pw-hint'>sets the length of the password, note that the total required characters cannot exceed the password length</span>
             </div>
         </div>
     )

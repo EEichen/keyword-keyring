@@ -62,7 +62,7 @@ const GeneratorsDisplay = () => {
                         />
                         <div className='gen-all-ls'>
                             <button disabled={!keyword} onClick={generateAllPasswords}>Generate All</button>
-                            <span className='ls'>Allow Local Storage: 
+                            <span className='ls hover-hint'>Allow Local Storage: 
                                 <input 
                                 type="checkbox" 
                                 name="localStorage" 
@@ -70,6 +70,7 @@ const GeneratorsDisplay = () => {
                                 checked={allowLS}
                                 onChange={e => handleAllowLS(e)}
                                 />
+                                <span className='hint ls-hint'>allows the keyword to be stored locally</span>
                             </span>
                         </div>
                         </div>
