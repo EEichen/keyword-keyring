@@ -78,3 +78,11 @@
 .allowed-characters input{
     width: 100%;
 }
+
+.hover-hint .pw-hint{
+    position: absolute;
+    width:20vw;
+    max-width: 170%;
+    margin-left: 12px;
+    top: -100%;
+}
