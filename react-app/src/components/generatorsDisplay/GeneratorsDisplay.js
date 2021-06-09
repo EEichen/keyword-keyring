@@ -60,7 +60,7 @@ const GeneratorsDisplay = () => {
                         value={keyword}
                         onChange={e => handleSetKeyword(e)}
                         />
-                        <div>
+                        <div className='gen-all-ls'>
                             <button disabled={!keyword} onClick={generateAllPasswords}>Generate All</button>
                             <span className='ls'>Allow Local Storage: 
                                 <input 

@@ -8,19 +8,19 @@
     background-color: rgb(75, 75, 75);
     width: 96%;
     max-width: 1000px;
+    flex-wrap: wrap;
 }
 
 .card-leftside{
     display: flex;
     flex-direction: column;
     flex-basis: content;
-    
 }
 
 .pw-display{
     height: 30px;
     border-radius: 5px;
-    width: 100%;
+    /* width: 100%; */
     font-size: x-large;
     cursor:text;
     /* background-color: rgb(235, 210, 200);
@@ -41,12 +41,14 @@
 
 .pw{
     display: flex;
+    flex-wrap: wrap;
 }
 
 .leftside-gen-buttons{
     display: flex;
     justify-content: space-between;
     margin-bottom: 5px;
+    flex-wrap: wrap;
 }
 
 .iteration{

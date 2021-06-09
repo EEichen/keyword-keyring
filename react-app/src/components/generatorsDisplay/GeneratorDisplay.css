@@ -86,3 +86,8 @@ font-weight: bold;
 .hover-hint:hover .hint{
     opacity: 1;
 }
+
+.gen-all-ls{
+    display: flex;
+    flex-wrap: nowrap;
+}
