@@ -38,6 +38,10 @@
 }
 
 .new-gen-buttons button{
+    max-width: 250px;
+}
+
+.new-gen-buttons button{
     margin: 3px;
 }
 

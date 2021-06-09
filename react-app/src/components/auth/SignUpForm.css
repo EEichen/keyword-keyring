@@ -1,11 +1,12 @@
 .sign-up-page{
-    margin: auto;
-    position: absolute;
+    position:fixed;
     display: flex;
-    left: 25%;
-    top: 30%;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 20%;
     flex-direction: column;
     width: 50%;
+    max-width: 500px;
     justify-items: center;
     border-radius: 5px;
     box-shadow: 0px 0px 3px lightcyan;
