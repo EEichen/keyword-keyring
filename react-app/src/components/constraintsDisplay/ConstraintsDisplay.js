@@ -53,8 +53,18 @@ const ConstraintsDisplay = ({constraints, setShowConstraints, title}) => {
         checkCharacters(numbers,defaultNumbers, 'number')
         checkCharacters(symbols, defaultSymbols, 'symbol')
 
+        const totalCharaters = lowercase.length + uppercase.length + numbers.length + symbols.length
+
         if(totalRequired > pwLength) {
             errs.push(`the total number of required characters cannot exceed the password length`)
+        }
+
+        if(pwLength < 4){
+            errs.push('password length must be 4 or higher')
+        }
+
+        if(!duplicates && totalCharaters < pwLength){
+            errs.push('password length must be less than or equal to the total characters when duplicates are not allowed')
         }
 
         if(errs.length > 0){
