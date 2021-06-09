@@ -1,6 +1,9 @@
 import React from 'react'
+import { useShowHints } from '../../context/showHintsContext'
 
 const Iterator = ({iteration, increment, decrement}) => {
+    const {showHints} = useShowHints()
+
     return(
         <div className='hover-hint'>
             <div className='iteration'>
@@ -9,7 +12,7 @@ const Iterator = ({iteration, increment, decrement}) => {
                 <div className='iteration-display'>{iteration}</div>
                 <button className='increment' onClick={increment}>+</button>
             </div>
-           <span className={`hint itr-hint`}>the iterator changes the password generated without creating a new generator</span>
+           {showHints && <span className={`hint itr-hint`}>the iterator changes the password generated without creating a new generator</span>}
         </div>
     )
 }

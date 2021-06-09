@@ -2,6 +2,7 @@ import React, { useEffect } from 'react'
 import { useDispatch } from 'react-redux'
 import { getGenerators } from '../../store/generators'
 import GeneratorsDisplay from '../generatorsDisplay/GeneratorsDisplay'
+import ShowHintsProvider from '../../context/showHintsContext'
 
 const Homepage = () => {
     const dispatch = useDispatch()
@@ -11,7 +12,9 @@ const Homepage = () => {
     }, [dispatch])
 
     return (
-        <GeneratorsDisplay />
+        <ShowHintsProvider>
+            <GeneratorsDisplay />
+        </ShowHintsProvider>
     )
 }
 
