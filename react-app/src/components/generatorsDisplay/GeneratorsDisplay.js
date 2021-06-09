@@ -60,16 +60,18 @@ const GeneratorsDisplay = () => {
                         value={keyword}
                         onChange={e => handleSetKeyword(e)}
                         />
-                        <button disabled={!keyword} onClick={generateAllPasswords}>Generate All</button>
-                        <span className='ls'>Allow Local Storage: 
-                            <input 
-                            type="checkbox" 
-                            name="localStorage" 
-                            id="local-storage" 
-                            checked={allowLS}
-                            onChange={e => handleAllowLS(e)}
-                            />
-                        </span>
+                        <div>
+                            <button disabled={!keyword} onClick={generateAllPasswords}>Generate All</button>
+                            <span className='ls'>Allow Local Storage: 
+                                <input 
+                                type="checkbox" 
+                                name="localStorage" 
+                                id="local-storage" 
+                                checked={allowLS}
+                                onChange={e => handleAllowLS(e)}
+                                />
+                            </span>
+                        </div>
                         </div>
                     </div>
                     <div>
