@@ -30,7 +30,6 @@ def create_generator():
     for i in seed_start:
         ini_seed += ord(i)
 
-    # note! replace seed 1 with actual seed later
     generator = Generator(
         title=data['title'],
         seed=1,
@@ -48,8 +47,8 @@ def create_generator():
 
     seed = int(str(current_user.id) + str(generator.id) + str(ini_seed))
 
-    print('keyword')
-    print(seed)
+    # print('keyword')
+    # print(seed)
 
     generator.seed = seed
 
