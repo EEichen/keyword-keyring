@@ -47,6 +47,8 @@
 .pw-len{
     margin-top: 5px;
     margin-bottom: 5px;
+    display: flex;
+    flex-direction: column;
 }
 
 .pw-len-input{
@@ -64,13 +66,13 @@
 }
 
 .req-hint{
-    margin-left: 7px;
+    margin-left: 3px;
 }
 
 
 .hover-hint .allow-hint{
     bottom: 100%;
-    left: 15%;
+    left: 25%;
     margin-bottom: 1px;
 }
 
@@ -80,9 +82,11 @@
 }
 
 .hover-hint .pw-hint{
-    position: absolute;
-    width:20vw;
-    max-width: 170%;
     margin-left: 12px;
     top: -100%;
+}
+
+.allow-dups{
+    display: flex;
+    flex-direction: column;
 }

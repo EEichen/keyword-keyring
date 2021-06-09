@@ -90,12 +90,15 @@ const ConstraintsDisplay = ({constraints, setShowConstraints, title}) => {
 
                 <div className='constraints simple'>
                     <div className='allow-dups'>
-                        Allow Duplicate Characters
-                        <input
-                            type="checkbox"
-                            checked={duplicates}
-                            onChange={e => setDuplicates(e.target.checked)}
-                        />
+                        <div className='hover-hint'>
+                            Allow Duplicate Characters
+                            <input
+                                type="checkbox"
+                                checked={duplicates}
+                                onChange={e => setDuplicates(e.target.checked)}
+                                />
+                            <span className='hint dups-hint'>Allows or disallows duplicate characters in a password, note that having multiple of a character in the allowed characters will still allow duplicates of that character</span>
+                        </div>
                         <PasswordLength pwLength={pwLength} setPwLength={setPwLength} />
                     </div>
                 </div>
