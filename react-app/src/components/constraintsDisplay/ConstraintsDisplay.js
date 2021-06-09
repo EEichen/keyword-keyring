@@ -30,8 +30,28 @@ const ConstraintsDisplay = ({constraints, setShowConstraints, title}) => {
             parseInt(reqSymbols) + 
             parseInt(reqUppercase))
         
-        console.log(totalRequired)
-        console.log(pwLength)
+        // console.log(totalRequired)
+        // console.log(pwLength)
+
+        const defaultLowercase = 'abcdefghijklmnopqrstuvwxyz'
+        const defaultUppercase = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
+        const defaultNumbers = '1234567890'
+        const defaultSymbols = "!# \"$%&'()*+,-./:;<=>?@[\\]^_`{|}~"
+
+        const checkCharacters = (chars, accecpted, type) =>{
+            for(let i = 0; i < chars.length; i++){
+                if(!accecpted.includes(chars[i])){
+                    errs.push(`Allowed ${type} only accepts ${type} characters`)
+                    return
+                }
+            }
+        }
+
+
+        checkCharacters(lowercase, defaultLowercase, 'lowercase')
+        checkCharacters(uppercase, defaultUppercase, 'uppercase')
+        checkCharacters(numbers,defaultNumbers, 'number')
+        checkCharacters(symbols, defaultSymbols, 'symbol')
 
         if(totalRequired > pwLength) {
             errs.push(`the total number of required characters cannot exceed the password length`)
@@ -39,7 +59,7 @@ const ConstraintsDisplay = ({constraints, setShowConstraints, title}) => {
 
         if(errs.length > 0){
             setErrors(errs)
-            console.log(errs)
+            // console.log(errs)
         }else{
             dispatch(changeConstriants({
                 id: constraints.id,

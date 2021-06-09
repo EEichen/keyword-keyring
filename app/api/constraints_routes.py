@@ -21,7 +21,7 @@ def check_characters(string, default):
 
 
 @constraints_routes.route('/<int:gen_id>')
-# @login_required
+@login_required
 def get_constraints(gen_id):
     generator = Generator.query.get(gen_id)
     constraints = Constraints.query.get(generator.constraints.id)
@@ -30,7 +30,7 @@ def get_constraints(gen_id):
 
 
 @constraints_routes.route('/<int:id>', methods=['PUT'])
-# @login_required
+@login_required
 def edit_constraints(id):
     data = request.json
     constraints = Constraints.query.get(id)
