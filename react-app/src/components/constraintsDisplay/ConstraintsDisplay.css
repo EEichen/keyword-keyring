@@ -67,13 +67,14 @@
     margin-left: 7px;
 }
 
-.hover-hint .req-hint::after{
-    content: ' ';
-    position: absolute;
-    top: 50%;
-    right: 100%;
-    margin-top: -7px;
-    border: 7px solid;
-    border-color: transparent rgb(45, 40, 40) transparent transparent;
-    
+
+.hover-hint .allow-hint{
+    bottom: 100%;
+    left: 15%;
+    margin-bottom: 1px;
+}
+
+
+.allowed-characters input{
+    width: 100%;
 }
