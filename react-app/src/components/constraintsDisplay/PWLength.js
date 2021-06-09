@@ -1,7 +1,10 @@
 import React from 'react'
+import { useShowHints } from '../../context/showHintsContext'
 
 
 const PasswordLength = ({pwLength, setPwLength}) =>{
+    const { showHints } = useShowHints()
+
     return (
         <div className='pw-len'>
             <div>Password Length</div>
@@ -12,7 +15,7 @@ const PasswordLength = ({pwLength, setPwLength}) =>{
                 value={pwLength}
                 onChange={e => setPwLength(e.target.value)}
                 />
-                <span id='pw-hint' className='hint pw-hint'>sets the length of the password, note that the total required characters cannot exceed the password length</span>
+                {showHints && <span id='pw-hint' className='hint pw-hint'>sets the length of the password, note that the total required characters cannot exceed the password length</span>}
             </div>
         </div>
     )

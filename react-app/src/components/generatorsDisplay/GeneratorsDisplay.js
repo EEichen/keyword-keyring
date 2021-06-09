@@ -4,6 +4,8 @@ import { generatePasswords } from '../../store/passwords';
 import GeneratorCard from './GeneratorCard';
 import './GeneratorDisplay.css'
 import Search from './Search';
+import { useShowHints } from '../../context/showHintsContext'
+
 
 
 const GeneratorsDisplay = () => {
@@ -14,6 +16,7 @@ const GeneratorsDisplay = () => {
         )
     const dispatch = useDispatch()
     const [allowLS, setAllowLS] = useState(localStorage.getItem('allow') === 'true' ? true : false)
+    const {showHints} = useShowHints()
 
     const generateAllPasswords = () => {
         dispatch(generatePasswords(keyword))
@@ -70,7 +73,7 @@ const GeneratorsDisplay = () => {
                                 checked={allowLS}
                                 onChange={e => handleAllowLS(e)}
                                 />
-                                <span className='hint ls-hint'>allows the keyword to be stored locally</span>
+                                {showHints && <span className='hint ls-hint'>allows the keyword to be stored locally</span>}
                             </span>
                         </div>
                         </div>

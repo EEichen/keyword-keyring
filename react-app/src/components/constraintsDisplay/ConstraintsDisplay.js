@@ -4,6 +4,7 @@ import { changeConstriants } from '../../store/generators'
 import AllowedCharacters from './AllowedCharacters'
 import PasswordLength from './PWLength'
 import RequiredCharacters from './RequiredCharacters'
+import { useShowHints } from '../../context/showHintsContext'
 import './ConstraintsDisplay.css'
 
 
@@ -19,6 +20,7 @@ const ConstraintsDisplay = ({constraints, setShowConstraints, title}) => {
     const [reqNumbers, setReqNumbers] = useState(constraints.required_numbers)
     const [reqSymbols, setReqSymbols] = useState(constraints.required_symbols)
     const [errors, setErrors] = useState([])
+    const {showHints} = useShowHints()
 
 
     const handleSave = () => {
@@ -97,7 +99,7 @@ const ConstraintsDisplay = ({constraints, setShowConstraints, title}) => {
                                 checked={duplicates}
                                 onChange={e => setDuplicates(e.target.checked)}
                                 />
-                            <span id='dups-hint' className='hint dups-hint'>Allows or disallows duplicate characters in a password, note that having multiple of a character in the allowed characters will still allow duplicates of that character</span>
+                            {showHints && <span id='dups-hint' className='hint dups-hint'>Allows or disallows duplicate characters in a password, note that having multiple of a character in the allowed characters will still allow duplicates of that character</span>}
                         </div>
                         <PasswordLength pwLength={pwLength} setPwLength={setPwLength} />
                     </div>

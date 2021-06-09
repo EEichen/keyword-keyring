@@ -1,4 +1,5 @@
 import React from 'react'
+import { useShowHints } from '../../context/showHintsContext'
 
 
 const AllowedCharacters = ({ 
@@ -11,6 +12,8 @@ const AllowedCharacters = ({
     setNumbers,
     setSymbols,
     }) => {
+    const { showHints } = useShowHints()
+
     return (
         <div className='allowed-characters'>
             <h4>Allowed characters</h4>
@@ -24,7 +27,7 @@ const AllowedCharacters = ({
                     onChange={e => setLowercase(e.target.value)}
                     />
    
-                    <span className='hint allow-hint'>sets the lowercase letters allowed in the password</span>
+                    {showHints && <span className='hint allow-hint'>sets the lowercase letters allowed in the password</span>}
                 </div>
          </div>
 
@@ -37,7 +40,7 @@ const AllowedCharacters = ({
                         value={uppercase}
                         onChange={e => setUppercase(e.target.value)}
                         />
-                    <span className='hint allow-hint'>sets the uppercase letters allowed in the password</span>
+                    {showHints && <span className='hint allow-hint'>sets the uppercase letters allowed in the password</span>}
                 </div>
             </div>
 
@@ -50,7 +53,7 @@ const AllowedCharacters = ({
                         value={numbers}
                         onChange={e => setNumbers(e.target.value)}
                         />
-                    <span className='hint allow-hint'>sets the numbers allowed in the password</span>
+                    {showHints && <span className='hint allow-hint'>sets the numbers allowed in the password</span>}
                 </div>
             </div>
 
@@ -63,7 +66,7 @@ const AllowedCharacters = ({
                         value={symbols}
                         onChange={e => setSymbols(e.target.value)}
                         />
-                    <span className='hint allow-hint'>sets the symbols allowed in the password</span>
+                    {showHints && <span className='hint allow-hint'>sets the symbols allowed in the password</span>}
                 </div>
             </div>
         </div>
