@@ -40,12 +40,12 @@ const GeneratorsDisplay = () => {
     }
 
     useEffect(() => {
-        if(localStorage.getItem('username') != username){
+        if(localStorage.getItem('username') !== username){
             localStorage.removeItem('keyword')
         }
 
         localStorage.setItem('username', username)
-    }, [])
+    }, [username])
 
 
     if(generators){
