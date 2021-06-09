@@ -65,3 +65,24 @@ font-weight: bold;
 .ls{
     margin-left: 20px;
 }
+
+.hover-hint{
+    display: inline-block;
+    position: relative;
+}
+
+.hover-hint .hint{
+    opacity: 0;
+    padding: 3px;
+    /* box-shadow: 0px 0px 2px lightcyan; */
+    font-size: smaller;
+    border-radius: 5px;
+    position: absolute;
+    z-index: 1;
+    background-color: rgb(45, 40, 40);
+    transition: opacity .5s;
+}
+
+.hover-hint:hover .hint{
+    opacity: 1;
+}
