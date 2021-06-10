@@ -59,3 +59,9 @@ nav button{
     align-self: center;
     height: 30px;
 }
+
+@media only screen and (max-width: 500px){
+    .welcome{
+        display: none;
+    }
+}
