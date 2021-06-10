@@ -100,6 +100,10 @@
     height: 30px;
 }
 
+    .card-rightside .new-gen-buttons > button{
+        margin-top: 30px;
+    }
+
 @media only screen and (max-width: 580px){
     .gen-card{
         flex-direction: column;
@@ -121,6 +125,10 @@
         bottom: 260%;
         left: 50%;
         overflow-y: scroll;
+    }
+
+    .card-rightside .new-gen-buttons > button{
+        height: 30px;
     }
 
 }

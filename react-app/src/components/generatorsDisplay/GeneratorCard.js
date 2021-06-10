@@ -6,11 +6,13 @@ import Iterator from './Iterator'
 import './GeneratorCard.css'
 import ConstraintsDisplay from '../constraintsDisplay/ConstraintsDisplay'
 import { generateOnePassword } from '../../store/passwords'
+import DeleteGenerator from '../DeleteGenerator/DeleteGenerator'
 
 
 const GeneratorCard = ({generator, keyword}) => {
     const dispatch = useDispatch()
     const [showConstraints, setShowConstraints] = useState(false)
+    const [open, setOpen] = useState(false)
     const password = useSelector(state => state.passwords[generator.id])
 
 
@@ -32,6 +34,10 @@ const GeneratorCard = ({generator, keyword}) => {
 
     const handleDeleteGen = () => {
         dispatch(deleteGenerator(generator.id))
+    }
+
+    const showDelete = () => {
+        setOpen(prev => !prev)
     }
 
     const generatePw = () =>{
@@ -76,7 +82,8 @@ const GeneratorCard = ({generator, keyword}) => {
                     title={generator.title}
                     />}
                 <EditTitle generator={generator} />
-                <button onClick={handleDeleteGen}>Delete Generator</button>
+                <button onClick={showDelete}>Delete Generator</button>
+                {open && <DeleteGenerator setOpen={setOpen} generator={generator} />}
             </div>
 
         </div>
