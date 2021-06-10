@@ -38,6 +38,8 @@ const ConstraintsDisplay = ({constraints, setShowConstraints, title}) => {
         const defaultNumbers = '1234567890'
         const defaultSymbols = "!# \"$%&'()*+,-./:;<=>?@[\\]^_`{|}~"
 
+        const cantInputInToNumbers = '-+.'
+
         const checkCharacters = (chars, accecpted, type) =>{
             for(let i = 0; i < chars.length; i++){
                 if(!accecpted.includes(chars[i])){
@@ -69,6 +71,28 @@ const ConstraintsDisplay = ({constraints, setShowConstraints, title}) => {
 
         if(reqNumbers < 0 || reqSymbols < 0 || reqUppercase < 0){
             errs.push('required characters must be 0 or higher')
+        }
+
+        console.log(typeof reqUppercase)
+
+        if(typeof pwLength === typeof 'string'){
+                if (pwLength.includes('.') || pwLength === '')
+                errs.push('password length can only be an integer')
+            }
+
+        if (typeof reqUppercase === typeof 'string') {
+            if (reqUppercase.includes('.') || reqUppercase === '')
+                errs.push('required uppercase can only be an integer')
+        }
+
+        if (typeof reqNumbers === typeof 'string') {
+            if (reqNumbers.includes('.') || reqNumbers === '')
+                errs.push('required numbers can only be an integer')
+        }
+
+        if (typeof reqSymbols === typeof 'string') {
+            if (reqSymbols.includes('.') || reqSymbols === '')
+                errs.push('required symbols can only be an integer')
         }
 
         if(errs.length > 0){
