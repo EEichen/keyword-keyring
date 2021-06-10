@@ -6,7 +6,7 @@
     margin: 10px;
     padding: 10px;
     background-color: rgb(75, 75, 75);
-    width: 96%;
+    width: 91%;
     max-width: 1000px;
     flex-wrap: wrap;
 }
@@ -130,5 +130,9 @@
     }
     .pw-display{
         width: 100%;
+    }
+
+    .card-rightside{
+        margin-left: -7px;
     }
 }

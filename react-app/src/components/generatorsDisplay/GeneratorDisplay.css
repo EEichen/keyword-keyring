@@ -90,7 +90,7 @@ font-weight: bold;
 
 .gen-all-ls{
     display: flex;
-    flex-wrap: nowrap;
+    flex-wrap: wrap;
 }
 
 .hidden{
@@ -109,4 +109,15 @@ font-weight: bold;
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
+}
+
+
+@media only screen and (max-width: 510px){
+    .gen-all-ls{
+        flex-direction: column;
+    }
+
+    .input-display > div{
+        width: 45%;
+    }   
 }
