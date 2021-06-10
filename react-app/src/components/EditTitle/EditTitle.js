@@ -23,7 +23,7 @@ const EditTitle = ({generator}) => {
     }
 
     return (
-        <div>
+        <>
             <button onClick={openEditTitle}>Edit Generator</button>
             {open && <div className='new-gen-form'>
                 <div className='new-gen-input'>
@@ -40,7 +40,7 @@ const EditTitle = ({generator}) => {
                     </div>
                 </div>
             </div>}
-        </div>
+        </>
     )
 }
 

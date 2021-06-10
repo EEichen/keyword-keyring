@@ -99,3 +99,36 @@
     margin: 5px;
     height: 30px;
 }
+
+@media only screen and (max-width: 550px){
+    .gen-card{
+        flex-direction: column;
+    }
+
+    .card-rightside{
+        flex-direction: row;
+        /* align-self: center; */
+        justify-content: space-between;
+        width: 100%;
+    }
+    .card-rightside button{
+        height: 40px;
+    }
+}
+@media only screen and (max-width: 420px){
+    .leftside-gen-buttons{
+        margin-top: 5px;
+    }
+}
+
+@media only screen and (max-width: 300px){
+    .iterator-label{
+        display: none;
+    }
+    .leftside-gen-buttons{
+        width: 100%;
+    }
+    .pw-display{
+        width: 100%;
+    }
+}
