@@ -148,8 +148,12 @@
         margin-bottom: 2px;
     }
 
-    .allowed-characters div{
-        margin-bottom: 2px;
+    .allowed-characters > div{
+        margin-bottom: 1.5px;
+    }
+
+    .required-characters > div{
+        margin-bottom: 1.5px;
     }
 }
 
