@@ -12,7 +12,7 @@ const Iterator = ({iteration, increment, decrement}) => {
                 <div className='iteration-display'>{iteration}</div>
                 <button className='increment' onClick={increment}>+</button>
             </div>
-           {showHints && <span className={`hint itr-hint`}>the iterator changes the password generated without creating a new generator</span>}
+           {showHints && <span id='itr-hint' className={`hint`}>the iterator changes the password generated without creating a new generator</span>}
         </div>
     )
 }

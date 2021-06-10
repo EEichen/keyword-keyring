@@ -19,3 +19,9 @@
     align-self: center;
 
 }
+
+@media only screen and (max-height: 540px){
+    .blurb{
+        font-size: 1.4em;
+    }
+}

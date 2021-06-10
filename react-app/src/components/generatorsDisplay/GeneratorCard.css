@@ -100,7 +100,7 @@
     height: 30px;
 }
 
-@media only screen and (max-width: 550px){
+@media only screen and (max-width: 580px){
     .gen-card{
         flex-direction: column;
     }
@@ -114,6 +114,15 @@
     .card-rightside button{
         height: 40px;
     }
+
+    .hover-hint #itr-hint{
+        width: 105px;
+        height: 50px;
+        bottom: 260%;
+        left: 50%;
+        overflow-y: scroll;
+    }
+
 }
 @media only screen and (max-width: 420px){
     .leftside-gen-buttons{
