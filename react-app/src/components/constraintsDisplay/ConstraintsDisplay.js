@@ -122,6 +122,7 @@ const ConstraintsDisplay = ({constraints, setShowConstraints, title}) => {
 
                 <div className='constraints simple'>
                     <div className='allow-dups'>
+                        <PasswordLength pwLength={pwLength} setPwLength={setPwLength} />
                         <div className='hover-hint'>
                             Allow Duplicate Characters
                             <input
@@ -131,7 +132,6 @@ const ConstraintsDisplay = ({constraints, setShowConstraints, title}) => {
                                 />
                             {showHints && <span id='dups-hint' className='hint dups-hint'>Allows or disallows duplicate characters in a password, note that having multiple of a character in the allowed characters will still allow duplicates of that character</span>}
                         </div>
-                        <PasswordLength pwLength={pwLength} setPwLength={setPwLength} />
                     </div>
                 </div>
 

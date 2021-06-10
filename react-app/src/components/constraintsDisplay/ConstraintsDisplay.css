@@ -99,7 +99,7 @@
     width: initial;
 }
 #pw-hint{
-    max-height: 50px;
+    max-height: 40px;
     z-index: 2;
     overflow-y: scroll;
     width: initial;
@@ -138,13 +138,26 @@
         overflow-y: scroll;
         height: 19px;
     }
+
+    .pw-len{
+        margin-top: 1px;
+        margin-bottom: 1px;
+    }
+
+    .allowed-characters{
+        margin-bottom: 2px;
+    }
+
+    .allowed-characters div{
+        margin-bottom: 2px;
+    }
 }
 
 
 @media only screen and (max-width: 320px){
     #dups-hint{
-        height: 49px;
-        top: 18px;
-        left: 121px
+        height: 43px;
+        bottom: 18px;
+        left: 121px;
     }
 }
