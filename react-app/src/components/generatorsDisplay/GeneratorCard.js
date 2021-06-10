@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-import { deleteGenerator, editGenerator } from '../../store/generators'
+import { editGenerator } from '../../store/generators'
 import EditTitle from '../EditTitle/EditTitle'
 import Iterator from './Iterator'
 import './GeneratorCard.css'
@@ -32,9 +32,6 @@ const GeneratorCard = ({generator, keyword}) => {
         }))
     }
 
-    const handleDeleteGen = () => {
-        dispatch(deleteGenerator(generator.id))
-    }
 
     const showDelete = () => {
         setOpen(prev => !prev)

@@ -38,8 +38,6 @@ const ConstraintsDisplay = ({constraints, setShowConstraints, title}) => {
         const defaultNumbers = '1234567890'
         const defaultSymbols = "!# \"$%&'()*+,-./:;<=>?@[\\]^_`{|}~"
 
-        const cantInputInToNumbers = '-+.'
-
         const checkCharacters = (chars, accecpted, type) =>{
             for(let i = 0; i < chars.length; i++){
                 if(!accecpted.includes(chars[i])){
