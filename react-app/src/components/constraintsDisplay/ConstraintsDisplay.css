@@ -124,4 +124,8 @@
     .constraints-title{
         font-size: initial;
     }
+
+    .constraints-display .new-gen-buttons button{
+        height: 30px;
+    }
 }
