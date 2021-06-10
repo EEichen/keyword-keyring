@@ -35,8 +35,8 @@ const EditTitle = ({generator}) => {
                         onChange={e => setTitle(e.target.value)}
                         />
                     <div className='new-gen-buttons'>
-                        <button onClick={handleEdit}>Save!</button>
-                        <button onClick={e => setOpen(false)}>Cancel</button>
+                        <button className='edit-btn' onClick={handleEdit}>Save!</button>
+                        <button className='edit-btn' onClick={e => setOpen(false)}>Cancel</button>
                     </div>
                 </div>
             </div>}

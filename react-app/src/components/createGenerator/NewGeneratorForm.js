@@ -17,7 +17,7 @@ const NewGeneratorForm = ({setOpen}) => {
             <div className='new-gen-title'>New Generator</div>
                 <input 
                 type="text" 
-                placeholder='Generator Title'
+                placeholder='Title'
                 className='title-input'
                 value={title}
                 onChange={e => setTitle(e.target.value)}
