@@ -16,7 +16,7 @@ const AllowedCharacters = ({
 
     return (
         <div className='allowed-characters'>
-            <h4>Allowed characters</h4>
+            <h4 className='cons-label'>Allowed characters</h4>
             <div>
                 <label htmlFor="lowercase">Lowercase</label>
                 <div className='hover-hint'>

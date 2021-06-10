@@ -104,3 +104,24 @@
     overflow-y: scroll;
     width: initial;
 }
+
+@media only screen and (max-width: 500px){
+    .cons-label{
+        /* display: none; */
+        font-size: smaller;
+    }
+
+    .constraints-display h4{
+        margin-top: 2px;
+        margin-bottom: 2px;
+    }
+
+    .constraints-display{
+        margin-top: 4%;
+        width: 75%;
+    }
+
+    .constraints-title{
+        font-size: initial;
+    }
+}

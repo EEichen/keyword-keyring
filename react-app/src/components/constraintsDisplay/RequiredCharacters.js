@@ -14,7 +14,7 @@ const RequiredCharacters = ({
 
     return (
         <div className='required-characters'>
-            <h4>Number of Required Characters</h4>
+            <h4 className='cons-label'>Number of Required Characters</h4>
             <div>
                 <label htmlFor="req-uppercase">Required uppercase</label>
                 <div className='hover-hint'>
