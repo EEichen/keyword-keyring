@@ -67,6 +67,10 @@ const ConstraintsDisplay = ({constraints, setShowConstraints, title}) => {
             errs.push('password length must be less than or equal to the total characters when duplicates are not allowed')
         }
 
+        if(reqNumbers < 0 || reqSymbols < 0 || reqUppercase < 0){
+            errs.push('required characters must be 0 or higher')
+        }
+
         if(errs.length > 0){
             setErrors(errs)
             // console.log(errs)

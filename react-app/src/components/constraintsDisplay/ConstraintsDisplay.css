@@ -156,6 +156,16 @@
     .required-characters > div{
         margin-bottom: 1.5px;
     }
+
+    .errors div{
+        font-size: .7em;
+    }
+
+    .errors{
+        margin-bottom: 2px;
+        max-height: 30px;
+        overflow-y: scroll;
+    }
 }
 
 
