@@ -25,7 +25,7 @@ const RequiredCharacters = ({
                         value={reqUppercase}
                         onChange={e => setReqUppercase(e.target.value)}
                         />
-                    {showHints && <span className='hint req-hint'>sets the minimum uppercase letters in the password</span>}
+                    {showHints && <span className='req-hint hint'>sets the minimum uppercase letters in the password</span>}
                 </div>
             </div>
             <div>
@@ -37,7 +37,7 @@ const RequiredCharacters = ({
                         value={reqNumbers}
                         onChange={e => setReqNumbers(e.target.value)}
                         />
-                    {showHints && <span className='hint req-hint'>sets the minimum numbers in the password</span>}
+                    {showHints && <span className='req-hint hint'>sets the minimum numbers in the password</span>}
                 </div>
             </div>
             <div>
@@ -49,7 +49,7 @@ const RequiredCharacters = ({
                         value={reqSymbols}
                         onChange={e => setReqSymbols(e.target.value)}
                         />
-                    {showHints && <span className='hint req-hint'>sets the minimum symbols in the password</span>}
+                    {showHints && <span className='req-hint hint'>sets the minimum symbols in the password</span>}
                 </div>
             </div>
         </div>

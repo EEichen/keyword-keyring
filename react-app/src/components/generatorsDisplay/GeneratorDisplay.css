@@ -73,6 +73,7 @@ font-weight: bold;
 
 .hover-hint .hint{
     opacity: 0;
+    visibility: hidden;
     padding: 3px;
     /* box-shadow: 0px 0px 2px lightcyan; */
     font-size: smaller;
@@ -86,6 +87,7 @@ font-weight: bold;
 
 .hover-hint:hover .hint{
     opacity: 1;
+    visibility: initial;
 }
 
 .gen-all-ls{

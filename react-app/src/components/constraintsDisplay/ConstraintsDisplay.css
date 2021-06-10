@@ -128,4 +128,23 @@
     .constraints-display .new-gen-buttons button{
         height: 30px;
     }
+
+    .hover-hint input + .req-hint{
+        width: 60%;
+    }
+
+    .hover-hint input + .allow-hint{
+        width: 80%;
+        overflow-y: scroll;
+        height: 19px;
+    }
+}
+
+
+@media only screen and (max-width: 320px){
+    #dups-hint{
+        height: 49px;
+        top: 18px;
+        left: 121px
+    }
 }
