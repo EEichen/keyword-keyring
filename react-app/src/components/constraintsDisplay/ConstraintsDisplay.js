@@ -29,9 +29,6 @@ const ConstraintsDisplay = ({constraints, setShowConstraints, title}) => {
             parseInt(reqNumbers) + 
             parseInt(reqSymbols) + 
             parseInt(reqUppercase))
-        
-        // console.log(totalRequired)
-        // console.log(pwLength)
 
         const defaultLowercase = 'abcdefghijklmnopqrstuvwxyz'
         const defaultUppercase = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
@@ -46,7 +43,6 @@ const ConstraintsDisplay = ({constraints, setShowConstraints, title}) => {
                 }
             }
         }
-
 
         checkCharacters(lowercase, defaultLowercase, 'lowercase')
         checkCharacters(uppercase, defaultUppercase, 'uppercase')

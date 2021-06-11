@@ -1,98 +1,83 @@
-# Flask React Project
+# Keyword Keyring (KwKr)
 
-This is the backend for the Flask React project.
+KwKr is a password generating app that allows the user to consistently generate passwords by typing in a keyword. It does not store the keyword or the passwords generated anywhere for security purposes.
 
-## Getting started
+[KwKr](https://kwkr.herokuapp.com/)
 
-1. Clone this repository (only this branch)
+[documentation](https://github.com/EEichen/keyword-keyring/wiki)
 
-   ```bash
-   git clone https://github.com/appacademy-starters/python-project-starter.git
-   ```
 
-2. Install dependencies
+## Technologies
+---
+* React
+* Redux
+* Flask
+* SQL Alchemy
+* CSS
+* Docker
 
-      ```bash
-      pipenv install --dev -r dev-requirements.txt && pipenv install -r requirements.txt
-      ```
+## Functionality
+---
+* Generators - Generators are titled, uniquely seeded, and have an iterator for generating the password associated with that specific generator. Users can create generators, change titles, change iterations, and delete generators.
 
-3. Create a **.env** file based on the example with proper settings for your
-   development environment
-4. Setup your PostgreSQL user, password and database and make sure it matches your **.env** file
+* Constraints - Each generator has a list of default constraints that are created along with the generator. The constraints give the user the ablilty to set the properties for the generated password. Users can edit the constriants for each specific generator.
 
-5. Get into your pipenv, migrate your database, seed your database, and run your flask app
+* Search - Allows users to search through their generators based on title.
 
-   ```bash
-   pipenv shell
-   ```
+* Password Generation - After entering a keyword, users may either generate all their passwords or generate them individualy. Passwords are generated based on the generator seed, the current iteration of the generator, and the constraints associated with that generator.
 
-   ```bash
-   flask db upgrade
-   ```
+* Local keyword storage - Users have the option to store the keyword locally on their machine until they turn it off or log out.
 
-   ```bash
-   flask seed all
-   ```
+* Hover Hints (tooltips) - Toggleable hints on how to use the application appear when the user hovers over specific parts of the application.
 
-   ```bash
-   flask run
-   ```
 
-6. To run the React App in development, checkout the [README](./react-app/README.md) inside the `react-app` directory.
+### Checking some of the constriants for valid input before sending it to the backend.
+```js
+const handleSave = () => {
+   let errs = []
+   const totalRequired = (
+      parseInt(reqNumbers) + 
+      parseInt(reqSymbols) + 
+      parseInt(reqUppercase))
 
-***
-*IMPORTANT!*
-   If you add any python dependencies to your pipfiles, you'll need to regenerate your requirements.txt before deployment.
-   You can do this by running:
+   const defaultLowercase = 'abcdefghijklmnopqrstuvwxyz'
+   const defaultUppercase = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
+   const defaultNumbers = '1234567890'
+   const defaultSymbols = "!# \"$%&'()*+,-./:;<=>?@[\\]^_`{|}~"
 
-   ```bash
-   pipenv lock -r > requirements.txt
-   ```
+   const checkCharacters = (chars, accecpted, type) =>{
+      for(let i = 0; i < chars.length; i++){
+            if(!accecpted.includes(chars[i])){
+               errs.push(`Allowed ${type} only accepts ${type} characters`)
+               return
+            }
+      }
+   }
 
-*ALSO IMPORTANT!*
-   psycopg2-binary MUST remain a dev dependency because you can't install it on apline-linux.
-   There is a layer in the Dockerfile that will install psycopg2 (not binary) for us.
-***
+   checkCharacters(lowercase, defaultLowercase, 'lowercase')
+   checkCharacters(uppercase, defaultUppercase, 'uppercase')
+   checkCharacters(numbers,defaultNumbers, 'number')
+   checkCharacters(symbols, defaultSymbols, 'symbol')
 
-## Deploy to Heroku
+   const totalCharaters = (lowercase.length + uppercase.length +           numbers.length + symbols.length)
 
-1. Create a new project on Heroku
-2. Under Resources click "Find more add-ons" and add the add on called "Heroku Postgres"
-3. Install the [Heroku CLI](https://devcenter.heroku.com/articles/heroku-command-line)
-4. Run
+   if(totalRequired > pwLength) {
+      errs.push(`the total number of required characters cannot exceed the password length`)
+   }
+```
+---
 
-   ```bash
-   heroku login
-   ```
+### Homepage Example
+![homepage]
 
-5. Login to the heroku container registry
+---
+### Hompage on mobile devices example
+![SSHomepage]
 
-   ```bash
-   heroku container:login
-   ```
+---
 
-6. Update the `REACT_APP_BASE_URL` variable in the Dockerfile.
-   This should be the full URL of your Heroku app: i.e. "https://flask-react-aa.herokuapp.com"
-7. Push your docker container to heroku from the root directory of your project.
-   This will build the dockerfile and push the image to your heroku container registry
-
-   ```bash
-   heroku container:push web -a {NAME_OF_HEROKU_APP}
-   ```
-
-8. Release your docker container to heroku
-
-   ```bash
-   heroku container:release web -a {NAME_OF_HEROKU_APP}
-   ```
-
-9. set up your database:
-
-   ```bash
-   heroku run -a {NAME_OF_HEROKU_APP} flask db upgrade
-   heroku run -a {NAME_OF_HEROKU_APP} flask seed all
-   ```
-
-10. Under Settings find "Config Vars" and add any additional/secret .env variables.
-
-11. profit
+## Future plans
+---
+* Set up a browser plugin for KwKr
+* Create a desktop/mobile app version
+* Add local storage keyword encryption
