@@ -12,10 +12,6 @@ def get_generators():
     generators = Generator.query.filter(
         Generator.user_id == current_user.id).all()
 
-    # # api test
-    # generators = Generator.query.filter(
-    #     Generator.user_id == 1).all()
-
     return {generator.id: generator.to_dict() for generator in generators}
 
 
@@ -35,20 +31,11 @@ def create_generator():
         seed=1,
         user_id=current_user.id
     )
-    # # test generator generation
-    # generator = Generator(
-    #     title=data['title'],
-    #     seed=1,
-    #     user_id=1
-    # )
 
     db.session.add(generator)
     db.session.commit()
 
     seed = int(str(current_user.id) + str(generator.id) + str(ini_seed))
-
-    # print('keyword')
-    # print(seed)
 
     generator.seed = seed
 

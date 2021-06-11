@@ -14,12 +14,6 @@ def search_gen(user_input):
         Generator.title.ilike(f'%{user_input}%')
         ).all()
 
-    # # test search
-    # fnd_generators = Generator.query.filter(
-    #     Generator.user_id == 1).filter(
-    #     Generator.title.ilike(f'%{user_input}%')
-    # ).all()
-
     if(len(fnd_generators) > 0):
         return {
             generator.id: generator.to_dict() for generator in fnd_generators
