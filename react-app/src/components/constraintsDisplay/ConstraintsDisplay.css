@@ -91,6 +91,17 @@
     flex-direction: column;
 }
 
+.errors{
+    max-height: 120px;
+    overflow-y: scroll;
+}
+
+.errors > div {
+    margin-bottom: 2px;
+    padding-bottom: 1px;
+    border-bottom: 1px dashed rgba(224, 255, 255, 0.253);
+}
+
 #dups-hint{
     max-height: 70px;
     overflow-y: scroll;
@@ -99,12 +110,14 @@
     width: initial;
     bottom: -133%;
 }
+
 #pw-hint{
     max-height: 40px;
     z-index: 2;
     overflow-y: scroll;
     width: initial;
 }
+
 
 @media only screen and (max-width: 500px){
     .cons-label{
@@ -167,6 +180,7 @@
         max-height: 30px;
         overflow-y: scroll;
     }
+
 }
 
 
