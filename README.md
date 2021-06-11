@@ -59,7 +59,7 @@ const handleSave = () => {
    checkCharacters(numbers,defaultNumbers, 'number')
    checkCharacters(symbols, defaultSymbols, 'symbol')
 
-   const totalCharaters = (lowercase.length + uppercase.length +           numbers.length + symbols.length)
+   const totalCharaters = (lowercase.length + uppercase.length + numbers.length + symbols.length)
 
    if(totalRequired > pwLength) {
       errs.push(`the total number of required characters cannot exceed the password length`)
