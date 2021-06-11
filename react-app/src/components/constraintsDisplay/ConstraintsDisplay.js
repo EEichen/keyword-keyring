@@ -77,8 +77,6 @@ const ConstraintsDisplay = ({constraints, setShowConstraints, title}) => {
             errs.push('required characters must be 0 or higher')
         }
 
-        console.log(typeof reqUppercase)
-
         if(typeof pwLength === typeof 'string'){
                 if (pwLength.includes('.') || pwLength === '')
                 errs.push('password length can only be an integer')
