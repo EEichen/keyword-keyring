@@ -44,12 +44,22 @@ const ConstraintsDisplay = ({constraints, setShowConstraints, title}) => {
             }
         }
 
+        
         checkCharacters(lowercase, defaultLowercase, 'lowercase')
         checkCharacters(uppercase, defaultUppercase, 'uppercase')
         checkCharacters(numbers,defaultNumbers, 'number')
         checkCharacters(symbols, defaultSymbols, 'symbol')
-
+        
         const totalCharaters = lowercase.length + uppercase.length + numbers.length + symbols.length
+        
+        const checkRequiredOnNoDups = (reqired, stringLength, type) => {
+            if (reqired > stringLength){
+                errs.push(
+                    `When duplicates are not allowed, required ${type}
+                    cannot exceed the number of characters in allowed ${type}`
+                    )
+            }
+        }
 
         if(totalRequired > pwLength) {
             errs.push(`the total number of required characters cannot exceed the password length`)
@@ -87,6 +97,12 @@ const ConstraintsDisplay = ({constraints, setShowConstraints, title}) => {
         if (typeof reqSymbols === typeof 'string') {
             if (reqSymbols.includes('.') || reqSymbols === '')
                 errs.push('required symbols can only be an integer')
+        }
+
+        if(!duplicates){
+            checkRequiredOnNoDups(reqNumbers, numbers.length, 'numbers')
+            checkRequiredOnNoDups(reqUppercase, uppercase.length, 'uppercase')
+            checkRequiredOnNoDups(reqSymbols, symbols.length, 'symbols')
         }
 
         if(errs.length > 0){
