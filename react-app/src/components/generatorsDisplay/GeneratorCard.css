@@ -145,7 +145,7 @@
     }
 }
 
-@media only screen and (max-width: 300px){
+@media only screen and (max-width: 310px){
     .iterator-label{
         display: none;
     }
