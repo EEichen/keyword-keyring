@@ -68,11 +68,12 @@ const handleSave = () => {
 ---
 
 ### Homepage Example
-![homepage]
+![KwKr-Homepage](https://user-images.githubusercontent.com/57817137/121718404-e5484500-caa7-11eb-9132-eaa45f7cf9ea.png)
+
 
 ---
 ### Hompage on mobile devices example
-![SSHomepage]
+![KwKr-Mobile](https://user-images.githubusercontent.com/57817137/121718753-407a3780-caa8-11eb-86e0-2658f401bef8.png)
 
 ---
 
