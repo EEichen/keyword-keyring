@@ -51,6 +51,15 @@ def generate_password(generator, keyword):
     required_symbols = generator.constraints.required_symbols
     allow_duplicates = generator.constraints.allow_duplicates
 
+    if not allow_duplicates and required_uppercase > len(uppercase_letters):
+        required_uppercase = len(uppercase_letters)
+
+    if not allow_duplicates and required_numbers > len(numbers):
+        required_numbers = len(numbers)
+
+    if not allow_duplicates and required_symbols > len(symbols):
+        required_symbols = len(symbols)
+
     final_seed = final_seed_creator(generator, pw_length, keyword)
     password = ''
 
