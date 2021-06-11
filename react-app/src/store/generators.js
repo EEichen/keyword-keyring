@@ -114,6 +114,10 @@ export const changeConstriants = (constraints) => async (dispatch) => {
 
 
 export const searchGenerators = (input) => async (dispatch) => {
+    if(input.includes('/') || input.includes('\\')){
+        dispatch(populateGenerators({'message': "search input cannot include '\\' or '/' "}))
+        return {}
+    }
     const res = await fetch(`/api/search/${input}`)
 
     const generators = await res.json()
