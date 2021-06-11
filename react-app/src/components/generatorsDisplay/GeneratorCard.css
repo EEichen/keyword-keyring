@@ -14,7 +14,10 @@
 .card-leftside{
     display: flex;
     flex-direction: column;
-    flex-basis: content;
+    /* flex-basis: content; */
+    max-width: 375.83px;
+    width: 100%;
+
 }
 
 .pw-display{
@@ -31,6 +34,8 @@
     margin: 5px;
     margin-bottom: 10px;
     font-size: xx-large;
+    overflow-x: scroll;
+    max-width: 100%;
 }
 
 .gen-label{
@@ -100,9 +105,9 @@
     height: 30px;
 }
 
-    .card-rightside .new-gen-buttons > button{
-        margin-top: 30px;
-    }
+.card-rightside .new-gen-buttons > button{
+    margin-top: 30px;
+}
 
 @media only screen and (max-width: 580px){
     .gen-card{
@@ -132,6 +137,8 @@
     }
 
 }
+
+
 @media only screen and (max-width: 420px){
     .leftside-gen-buttons{
         margin-top: 5px;
