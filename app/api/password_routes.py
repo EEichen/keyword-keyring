@@ -76,6 +76,18 @@ def generate_password(generator, keyword):
             if required_symbols <= 0:
                 del strings[3]
 
+        if len(strings[0]) <= 0:
+            del strings[0]
+
+        if len(strings[1]) <= 0:
+            del strings[1]
+
+        if len(strings[2]) <= 0:
+            del strings[2]
+
+        if len(strings[3]) <= 0:
+            del strings[3]
+
         selected_string = select_character_string(
             final_seed,
             list(strings.values())
