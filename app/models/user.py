@@ -12,6 +12,7 @@ class User(db.Model, UserMixin):
     hashed_password = db.Column(db.String(255), nullable=False)
 
     generator = db.relationship('Generator', back_populates='user')
+    options = db.relationship('Options', back_populates='user')
 
     @property
     def password(self):
