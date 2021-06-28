@@ -30,11 +30,11 @@ def select_character_string(final_seed, strings):
 
 def select_character(final_seed, selected_string, allow_duplicates):
     random.seed(final_seed)
-    selector = random.randint(0, len(selected_string) - 1)
+    selector = random.randint(0, len(selected_string) * 10 - 1)
     if allow_duplicates:
-        return selected_string[selector]
+        return selected_string[selector//10]
     else:
-        return selected_string.pop(selector)
+        return selected_string.pop(selector//10)
 
 
 def generate_password(generator, keyword):
@@ -64,7 +64,7 @@ def generate_password(generator, keyword):
     password = ''
 
     for i in range(0, pw_length):
-        final_seed += i
+        final_seed += i * 3 + i
         total_required = (
             required_uppercase +
             required_numbers +
