@@ -7,6 +7,7 @@ import random
 password_routes = Blueprint('passwords', __name__)
 
 
+# Change the keyword into a number to add to the final seed
 def keyword_to_number(kw):
     number = 0
     for i in kw:
