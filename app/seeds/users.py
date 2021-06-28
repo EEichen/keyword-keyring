@@ -1,5 +1,6 @@
 from werkzeug.security import generate_password_hash
-from app.models import db, User
+from app.models import db, User, Options
+
 
 # Adds a demo user, you can add other users here if you want
 def seed_users():
@@ -8,8 +9,12 @@ def seed_users():
                 password='password')
 
     db.session.add(demo)
-
     db.session.commit()
+
+    opts = Options(user_id=demo.id)
+    db.session.add(opts)
+    db.session.commit()
+
 
 # Uses a raw SQL query to TRUNCATE the users table.
 # SQLAlchemy doesn't have a built in function to do this

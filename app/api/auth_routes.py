@@ -1,5 +1,5 @@
 from flask import Blueprint, jsonify, session, request
-from app.models import User, db
+from app.models import User, db, Options
 from app.forms import LoginForm
 from app.forms import SignUpForm
 from flask_login import current_user, login_user, logout_user, login_required
@@ -74,6 +74,9 @@ def sign_up():
             return {'errors': ['Username or email already exists']}, 401
 
         db.session.add(user)
+        db.session.commit()
+        opts = Options(user_id=user.id)
+        db.session.add(opts)
         db.session.commit()
         login_user(user)
         return user.to_dict()
