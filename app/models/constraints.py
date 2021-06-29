@@ -24,7 +24,7 @@ class Constraints(db.Model):
     required_uppercase = db.Column(db.Integer, default=1, nullable=False)
     required_numbers = db.Column(db.Integer, default=1, nullable=False)
     required_symbols = db.Column(db.Integer, default=1, nullable=False)
-    allow_duplicates = db.Column(db.Boolean, default=True, nullable=False)
+    allow_duplicates = db.Column(db.Boolean, default=False, nullable=False)
 
     generator = db.relationship('Generator', back_populates='constraints')
 
