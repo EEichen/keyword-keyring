@@ -33,5 +33,5 @@ class User(db.Model, UserMixin):
           "id": self.id,
           "username": self.username,
           "email": self.email,
-          "options": self.options
+          "options": self.options.to_dict()
         }
