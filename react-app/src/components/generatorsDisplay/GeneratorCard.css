@@ -54,6 +54,7 @@
     justify-content: space-between;
     margin-bottom: 5px;
     flex-wrap: wrap;
+    margin-bottom: 3px;
 }
 
 .iteration{
