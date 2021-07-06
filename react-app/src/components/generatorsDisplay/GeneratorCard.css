@@ -34,7 +34,7 @@
     margin: 5px;
     margin-bottom: 10px;
     font-size: xx-large;
-    /* overflow-x: scroll; */
+    overflow: hidden;
     max-width: 100%;
 }
 
