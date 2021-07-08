@@ -65,7 +65,7 @@ def generate_password(generator, keyword):
     password = ''
 
     for i in range(0, pw_length):
-        final_seed += i * 3 + i
+        final_seed += i
         total_required = (
             required_uppercase +
             required_numbers +
@@ -113,6 +113,8 @@ def generate_password(generator, keyword):
             required_numbers -= 1
         elif selected_string == symbols and required_symbols > 0:
             required_symbols -= 1
+
+        final_seed += i * 3 + 1
 
         password += select_character(
             final_seed, selected_string, allow_duplicates)
