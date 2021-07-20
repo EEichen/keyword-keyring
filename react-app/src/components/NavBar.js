@@ -5,6 +5,7 @@ import CreateGenerator from './createGenerator/CreateGenerator';
 import { useDispatch } from "react-redux";
 import { login } from "../store/session";
 import './NavBar.css'
+import Options from './options/Options';
 
 
 const NavBar = ({user}) => {
@@ -37,7 +38,10 @@ const NavBar = ({user}) => {
         {user && <div className='user-bar'>
           <CreateGenerator />
           <h2 className='welcome'>Welcome to KwKr {user.username}</h2>
-          <LogoutButton />
+          <div>
+            <Options />
+            <LogoutButton />
+          </div>
         </div>}
 
     </nav>
