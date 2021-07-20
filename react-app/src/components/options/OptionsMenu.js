@@ -12,12 +12,13 @@ const OptionsMenu = ({setOptMenu}) => {
 
     return (
         <div className='new-gen-form'>
-            <div className='constraints-display'>
-                <div>
+            <div className='options-display'>
+                <div className='options'>
+                    <h4>Options</h4>
                     <button onClick={e=> setShowHints(prev => !prev)}>Show Hints: {showHints ? 'On' : 'Off'}</button>
                     <button onClick={e => setAllowLs(prev => !prev)}>Allow Local Storage: {allowLs ? 'Yes' : 'No'}</button>
                 </div>
-                <div>
+                <div className='new-gen-buttons'>
                     <button onClick={handleSave}>Save</button>
                     <button onClick={e => setOptMenu(false)}>Cancel</button>
                 </div>
