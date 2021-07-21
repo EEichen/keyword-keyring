@@ -59,7 +59,7 @@ const GeneratorsDisplay = () => {
                         <div>
                         <input 
                         type="text" 
-                        placeholder='keyword'
+                        placeholder='Type in something you can remember to generate your passwords'
                         value={keyword}
                         onChange={e => handleSetKeyword(e)}
                         />
