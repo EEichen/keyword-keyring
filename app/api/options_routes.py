@@ -5,7 +5,7 @@ from app.models import db, Options
 options_routes = Blueprint('constraints', __name__)
 
 
-@options_routes.route('/options', methods=['PUT'])
+@options_routes.route('/', methods=['PUT'])
 @login_required
 def update_options():
     data = request.json

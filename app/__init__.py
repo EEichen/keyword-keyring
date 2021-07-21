@@ -39,6 +39,7 @@ app.register_blueprint(generator_routes, url_prefix='/api/generators')
 app.register_blueprint(constraints_routes, url_prefix='/api/constraints')
 app.register_blueprint(search_routes, url_prefix='/api/search')
 app.register_blueprint(password_routes, url_prefix='/api/passwords')
+app.register_blueprint(options_routes, url_prefix='api/options')
 db.init_app(app)
 Migrate(app, db)
 
