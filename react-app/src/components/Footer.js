@@ -9,7 +9,7 @@ const Footer = () => {
                 Created by: Elias Eichen
             </span>
             <span><a href="https://github.com/EEichen">GitHub</a></span>
-            <span><a href="www.linkedin.com/in/elias-eichen-bb15a4198">Linkedin</a></span>
+            <span><a href="https://www.linkedin.com/in/elias-eichen-bb15a4198">Linkedin</a></span>
         </div>
     )
 }
