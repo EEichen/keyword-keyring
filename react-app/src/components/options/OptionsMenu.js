@@ -1,13 +1,15 @@
 import React, { useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
+import { saveOptions } from '../../store/session'
 
 const OptionsMenu = ({setOptMenu}) => {
+    const dispatch = useDispatch()
     const userOptions = useSelector(state => state.session.user.options)
     const [showHints, setShowHints] = useState(userOptions.hints)
     const [allowLs, setAllowLs] = useState(userOptions.allow_ls)
 
     const handleSave = () =>{
-
+        dispatch(saveOptions({id: userOptions.id, allow_ls: allowLs, hints: showHints}))
     }
 
     return (

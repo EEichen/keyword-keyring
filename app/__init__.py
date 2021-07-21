@@ -12,6 +12,7 @@ from .api.generator_routes import generator_routes
 from .api.constraints_routes import constraints_routes
 from .api.search_routes import search_routes
 from .api.password_routes import password_routes
+from .api.options_routes import options_routes
 
 from .seeds import seed_commands
 
@@ -39,7 +40,7 @@ app.register_blueprint(generator_routes, url_prefix='/api/generators')
 app.register_blueprint(constraints_routes, url_prefix='/api/constraints')
 app.register_blueprint(search_routes, url_prefix='/api/search')
 app.register_blueprint(password_routes, url_prefix='/api/passwords')
-app.register_blueprint(options_routes, url_prefix='api/options')
+app.register_blueprint(options_routes, url_prefix='/api/options')
 db.init_app(app)
 Migrate(app, db)
 

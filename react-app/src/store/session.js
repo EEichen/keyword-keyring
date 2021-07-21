@@ -23,15 +23,19 @@ const updateOptions = (options) =>({
 const initialState = { user: null };
 
 export const saveOptions = (options) => async (dispatch) => {
-  const response = await fetch('/api/options/', {
-    method: 'PUT',
+  const res = await fetch(`/api/options/`, {
+    method: "PUT",
     headers: {
-      'ContentType': 'application/json'
+      "Content-Type": "application/json"
     },
-    body: JSON.stringify(options)
+    body: JSON.stringify({
+      'id': options.id,
+      'allow_ls': options.allow_ls,
+      'hints': options.hints
+    })
   })
 
-  const data = await response.json()
+  const data = await res.json()
   if(data.errors){
     return data;
   }
