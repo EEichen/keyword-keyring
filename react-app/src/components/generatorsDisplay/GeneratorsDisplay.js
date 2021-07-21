@@ -4,7 +4,7 @@ import { generatePasswords } from '../../store/passwords';
 import GeneratorCard from './GeneratorCard';
 import './GeneratorDisplay.css'
 import Search from './Search';
-import { useShowHints } from '../../context/showHintsContext'
+// import { useShowHints } from '../../context/showHintsContext'
 
 
 
@@ -16,7 +16,7 @@ const GeneratorsDisplay = () => {
         )
     const dispatch = useDispatch()
     const [allowLS, setAllowLS] = useState(localStorage.getItem('allow') === 'true' ? true : false)
-    const {showHints} = useShowHints()
+    const showHints = useSelector(state => state.session.user.options.hints)
 
     const generateAllPasswords = () => {
         dispatch(generatePasswords(keyword))

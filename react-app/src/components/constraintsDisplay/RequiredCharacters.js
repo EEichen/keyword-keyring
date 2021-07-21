@@ -1,5 +1,6 @@
 import React from 'react'
-import { useShowHints } from '../../context/showHintsContext'
+import { useSelector } from 'react-redux'
+// import { useShowHints } from '../../context/showHintsContext'
 
 
 const RequiredCharacters = ({
@@ -10,7 +11,7 @@ const RequiredCharacters = ({
     setReqNumbers,
     setReqSymbols
 }) => {
-    const { showHints } = useShowHints()
+    const showHints = useSelector(state => state.session.user.options.hints)
 
     return (
         <div className='required-characters'>

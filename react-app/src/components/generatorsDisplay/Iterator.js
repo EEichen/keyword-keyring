@@ -1,8 +1,9 @@
 import React from 'react'
-import { useShowHints } from '../../context/showHintsContext'
+import { useSelector } from 'react-redux'
+// import { useShowHints } from '../../context/showHintsContext'
 
 const Iterator = ({iteration, increment, decrement}) => {
-    const {showHints} = useShowHints()
+    const showHints = useSelector(state => state.session.user.options.hints)
 
     return(
         <div className='hover-hint'>

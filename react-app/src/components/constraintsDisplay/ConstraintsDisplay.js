@@ -1,10 +1,10 @@
 import React, { useState } from 'react'
-import { useDispatch } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
 import { changeConstriants } from '../../store/generators'
 import AllowedCharacters from './AllowedCharacters'
 import PasswordLength from './PWLength'
 import RequiredCharacters from './RequiredCharacters'
-import { useShowHints } from '../../context/showHintsContext'
+// import { useShowHints } from '../../context/showHintsContext'
 import './ConstraintsDisplay.css'
 
 
@@ -20,7 +20,7 @@ const ConstraintsDisplay = ({constraints, setShowConstraints, title}) => {
     const [reqNumbers, setReqNumbers] = useState(constraints.required_numbers)
     const [reqSymbols, setReqSymbols] = useState(constraints.required_symbols)
     const [errors, setErrors] = useState([])
-    const {showHints} = useShowHints()
+    const showHints = useSelector(state => state.session.user.options.hints)
 
 
     const handleSave = () => {

@@ -1,5 +1,6 @@
 import React from 'react'
-import { useShowHints } from '../../context/showHintsContext'
+import { useSelector } from 'react-redux'
+// import { useShowHints } from '../../context/showHintsContext'
 
 
 const AllowedCharacters = ({ 
@@ -12,7 +13,7 @@ const AllowedCharacters = ({
     setNumbers,
     setSymbols,
     }) => {
-    const { showHints } = useShowHints()
+    const showHints = useSelector(state => state.session.user.options.hints)
 
     return (
         <div className='allowed-characters'>
