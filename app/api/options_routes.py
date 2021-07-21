@@ -8,5 +8,13 @@ options_routes = Blueprint('constraints', __name__)
 @options_routes.route('/options', methods=['PUT'])
 @login_required
 def update_options():
-    options = current_user.id
-    pass
+    data = request.json
+    options = Options.query.get(data['id'])
+
+    options.allow_ls = data['allow_ls']
+    options.hints = data['hints']
+
+    db.session.add(options)
+    db.session.commit
+
+    return options.to_dict()
