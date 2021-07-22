@@ -64,7 +64,7 @@ nav button{
     display: flex;
 }
 
-@media only screen and (max-width: 500px){
+@media only screen and (max-width: 520px){
     .welcome{
         display: none;
     }
