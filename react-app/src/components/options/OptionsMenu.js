@@ -10,6 +10,7 @@ const OptionsMenu = ({setOptMenu}) => {
 
     const handleSave = () =>{
         dispatch(saveOptions({id: userOptions.id, allow_ls: allowLs, hints: showHints}))
+        setOptMenu(false)
     }
 
     return (
