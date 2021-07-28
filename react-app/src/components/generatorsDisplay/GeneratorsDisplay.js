@@ -11,12 +11,13 @@ import Search from './Search';
 const GeneratorsDisplay = () => {
     const generators = useSelector(state => state.generators)
     const username = useSelector(state => state.session.user.username)
+    const allowLS = useSelector(state => state.session.user.options.allow_ls)
+    const showHints = useSelector(state => state.session.user.options.hints)
+    const dispatch = useDispatch()
     const [keyword, setKeyword] = useState(
         localStorage.getItem('keyword') ? localStorage.getItem('keyword') : ''
         )
-    const dispatch = useDispatch()
-    const [allowLS, setAllowLS] = useState(localStorage.getItem('allow') === 'true' ? true : false)
-    const showHints = useSelector(state => state.session.user.options.hints)
+    // const [allowLS, setAllowLS] = useState(localStorage.getItem('allow') === 'true' ? true : false)
 
     const generateAllPasswords = () => {
         dispatch(generatePasswords(keyword))
@@ -29,18 +30,18 @@ const GeneratorsDisplay = () => {
         }
     }
 
-    const handleAllowLS = (e) => {
-        setAllowLS(e.target.checked)
+    // const handleAllowLS = (e) => {
+    //     setAllowLS(e.target.checked)
 
-        localStorage.setItem('allow', e.target.checked)
-        if(e.target.checked && keyword){
-            localStorage.setItem('keyword', keyword)
-        }
+    //     localStorage.setItem('allow', e.target.checked)
+    //     if(e.target.checked && keyword){
+    //         localStorage.setItem('keyword', keyword)
+    //     }
 
-        if(!e.target.checked){
-            localStorage.removeItem('keyword')
-        }
-    }
+    //     if(!e.target.checked){
+    //         localStorage.removeItem('keyword')
+    //     }
+    // }
 
     useEffect(() => {
         if(localStorage.getItem('username') !== username){
@@ -65,7 +66,7 @@ const GeneratorsDisplay = () => {
                         />
                         <div className='gen-all-ls'>
                             <button disabled={!keyword} onClick={generateAllPasswords}>Generate All</button>
-                                <span className='ls hover-hint'> <span id='ls-label'>Allow Local Storage: </span>
+                                {/* <span className='ls hover-hint'> <span id='ls-label'>Allow Local Storage: </span>
                                 <input 
                                 type="checkbox" 
                                 name="localStorage" 
@@ -74,7 +75,7 @@ const GeneratorsDisplay = () => {
                                 onChange={e => handleAllowLS(e)}
                                 />
                                 {showHints && <span className='hint ls-hint'>allows the keyword to be stored locally</span>}
-                            </span>
+                            </span> */}
                         </div>
                         </div>
                     </div>
