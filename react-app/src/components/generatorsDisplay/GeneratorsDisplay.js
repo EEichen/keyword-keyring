@@ -12,7 +12,7 @@ const GeneratorsDisplay = () => {
     const generators = useSelector(state => state.generators)
     const username = useSelector(state => state.session.user.username)
     const allowLS = useSelector(state => state.session.user.options.allow_ls)
-    const showHints = useSelector(state => state.session.user.options.hints)
+    // const showHints = useSelector(state => state.session.user.options.hints)
     const dispatch = useDispatch()
     const [keyword, setKeyword] = useState(
         localStorage.getItem('keyword') ? localStorage.getItem('keyword') : ''

@@ -2,7 +2,8 @@ import React, { useEffect } from 'react'
 import { useDispatch } from 'react-redux'
 import { getGenerators } from '../../store/generators'
 import GeneratorsDisplay from '../generatorsDisplay/GeneratorsDisplay'
-import ShowHintsProvider from '../../context/showHintsContext'
+// import ShowHintsProvider from '../../context/showHintsContext'
+import ShowPasswordsProvider from '../../context/showPasswordsContext'
 
 const Homepage = () => {
     const dispatch = useDispatch()
@@ -12,9 +13,9 @@ const Homepage = () => {
     }, [dispatch])
 
     return (
-        <ShowHintsProvider>
+        <ShowPasswordsProvider>
             <GeneratorsDisplay />
-        </ShowHintsProvider>
+        </ShowPasswordsProvider>
     )
 }
 
