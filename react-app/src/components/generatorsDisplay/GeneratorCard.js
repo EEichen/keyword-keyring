@@ -7,6 +7,7 @@ import './GeneratorCard.css'
 import ConstraintsDisplay from '../constraintsDisplay/ConstraintsDisplay'
 import { generateOnePassword } from '../../store/passwords'
 import DeleteGenerator from '../DeleteGenerator/DeleteGenerator'
+import { useShowPasswords } from '../../context/showPasswordsContext'
 
 
 const GeneratorCard = ({generator, keyword}) => {
@@ -14,6 +15,7 @@ const GeneratorCard = ({generator, keyword}) => {
     const [showConstraints, setShowConstraints] = useState(false)
     const [open, setOpen] = useState(false)
     const password = useSelector(state => state.passwords[generator.id])
+    const {showPasswords} = useShowPasswords()
 
 
     const increment = () => {
@@ -53,7 +55,7 @@ const GeneratorCard = ({generator, keyword}) => {
                 <div className='pw'>
                 <label  htmlFor={`pwdisplay-${generator.id}`} className='gen-label'>Password:</label>
                 <input 
-                type='text' 
+                type={showPasswords ? 'text' : 'password'} 
                 id={`pwdisplay-${generator.id}`}
                 className='pw-display' 
                 disabled 
