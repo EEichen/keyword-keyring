@@ -8,6 +8,10 @@
     border-bottom: none;
 }
 
+.kw-with-gen{
+    max-width: 400px;
+}
+
 .display-gens{
     top: 0;
     bottom: 0;
@@ -93,6 +97,7 @@ font-weight: bold;
 .gen-all-ls{
     display: flex;
     flex-wrap: wrap;
+    justify-content: space-between;
 }
 
 .hidden{
