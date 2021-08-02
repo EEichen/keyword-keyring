@@ -18,6 +18,7 @@ const GeneratorsDisplay = () => {
         localStorage.getItem('keyword') ? localStorage.getItem('keyword') : ''
         )
     // const [allowLS, setAllowLS] = useState(localStorage.getItem('allow') === 'true' ? true : false)
+    const [showKw, setShowKw] = useState(false)
 
     const generateAllPasswords = () => {
         dispatch(generatePasswords(keyword))
@@ -59,13 +60,14 @@ const GeneratorsDisplay = () => {
                     <div className='kw-with-gen'>
                         <div>
                         <input 
-                        type="text" 
+                        type={showKw ? "text" : "password"} 
                         placeholder='Type in something you can remember to generate your passwords'
                         value={keyword}
                         onChange={e => handleSetKeyword(e)}
                         />
                         <div className='gen-all-ls'>
                             <button disabled={!keyword} onClick={generateAllPasswords}>Generate All</button>
+                            <button onClick={e => setShowKw(prev => !prev)}>show keyword: {showKw ? 'ON' : 'Off'}</button>
                                 {/* <span className='ls hover-hint'> <span id='ls-label'>Allow Local Storage: </span>
                                 <input 
                                 type="checkbox" 
