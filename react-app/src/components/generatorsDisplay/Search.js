@@ -30,7 +30,7 @@ const Search = () => {
             onChange={handleSearch}
             />
             <div className='search-area-buttons'>
-            <button onClick={e => setShowPasswords(prev => !prev)}>passwords: {showPasswords ? 'Show' : 'Hide'}</button>
+            <button onClick={e => setShowPasswords(prev => !prev)}>Passwords: {showPasswords ? 'Show' : 'Hide'}</button>
             <button onClick={e => setInput('')}>Clear</button>
             </div>
         </div>
