@@ -11,7 +11,7 @@ const CreateGenerator = () => {
 
     return(
         <div>
-            <button onClick={openNewGenerator}>+ New Generator</button>
+            <button className='create-a-gen' onClick={openNewGenerator}>+ New Generator</button>
             {open && <div className='new-gen-form'>
                 <NewGeneratorForm setOpen={setOpen}/>
             </div>}
