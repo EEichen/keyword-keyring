@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { editGenerator } from '../../store/generators'
 import EditTitle from '../EditTitle/EditTitle'
@@ -16,6 +16,11 @@ const GeneratorCard = ({generator, keyword}) => {
     const [open, setOpen] = useState(false)
     const password = useSelector(state => state.passwords[generator.id])
     const {showPasswords} = useShowPasswords()
+    const [showPw, setShowPw] = useState(showPasswords)
+
+    useEffect(() =>{
+        setShowPw(showPasswords)
+    }, [showPasswords])
 
 
     const increment = () => {
@@ -55,7 +60,7 @@ const GeneratorCard = ({generator, keyword}) => {
                 <div className='pw'>
                 <label  htmlFor={`pwdisplay-${generator.id}`} className='gen-label'>Password:</label>
                 <input 
-                type={showPasswords ? 'text' : 'password'} 
+                type={showPw ? 'text' : 'password'} 
                 id={`pwdisplay-${generator.id}`}
                 className='pw-display' 
                 disabled 
