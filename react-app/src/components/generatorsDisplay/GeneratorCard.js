@@ -58,15 +58,18 @@ const GeneratorCard = ({generator, keyword}) => {
             <div className='card-leftside'>
                 <p className='gen-title'>{generator.title}</p>
                 <div className='pw'>
-                <label  htmlFor={`pwdisplay-${generator.id}`} className='gen-label'>Password:</label>
-                <input 
-                type={showPw ? 'text' : 'password'} 
-                id={`pwdisplay-${generator.id}`}
-                className='pw-display' 
-                disabled 
-                value={password ? password: ''}
-                ></input>
-                <button onClick={e => setShowPw(prev => !prev)}>{showPw ? 'Show' : 'Hide'}</button>
+                    <label  htmlFor={`pwdisplay-${generator.id}`} className='gen-label'>Password:</label>
+                    <div>
+                        <input 
+                        type={showPw ? 'text' : 'password'} 
+                        id={`pwdisplay-${generator.id}`}
+                        className='pw-display' 
+                        disabled 
+                        value={password ? password: ''}
+                        ></input>
+                        <button className='sh-button' onClick={e => setShowPw(prev => !prev)}>{showPw ? 'Show' : 'Hide'}</button>
+
+                    </div>
                 </div>
                 <div className='leftside-gen-buttons'>
                     <button disabled={!keyword} onClick={generatePw} >Generate</button>

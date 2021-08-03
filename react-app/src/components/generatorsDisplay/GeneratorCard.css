@@ -20,6 +20,17 @@
 
 }
 
+.sh-button{
+    margin-left: 5px;
+    height: 36px;
+}
+
+.pw > div{
+    display: flex;
+    flex-wrap: nowrap;
+    width: 100%;
+}
+
 .pw-display{
     height: 30px;
     border-radius: 5px;
@@ -46,7 +57,6 @@
 
 .pw{
     display: flex;
-    flex-wrap: wrap;
 }
 
 .leftside-gen-buttons{
@@ -110,7 +120,7 @@
     margin-top: 30px;
 }
 
-@media only screen and (max-width: 580px){
+@media only screen and (max-width: 640px){
     .gen-card{
         flex-direction: column;
     }
@@ -137,6 +147,15 @@
         height: 30px;
     }
 
+    .pw{
+        flex-wrap: wrap;
+        margin-bottom: 5px;
+    }
+
+    .pw-display{
+        width: 100%;
+    }
+
 }
 
 
@@ -146,7 +165,7 @@
     }
 }
 
-@media only screen and (max-width: 310px){
+@media only screen and (max-width: 350px){
     .iterator-label{
         display: none;
     }
