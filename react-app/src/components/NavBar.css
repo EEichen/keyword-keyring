@@ -53,6 +53,10 @@ margin-left: 20%;
 margin-right: 5%;
 }
 
+.alt-welcome{
+    display: none;
+}
+
 nav button{
     box-shadow: 0px 0px 3px rgba(255, 255, 255, 1);
     border-radius: 10px 10px;
@@ -65,12 +69,16 @@ nav button{
 }
 
 .create-a-gen{
-    min-width: 115px;
+    /* min-width: 115px; */
 }
 
 @media only screen and (max-width: 600px){
     .welcome{
         display: none;
+    }
+
+    .alt-welcome{
+        display: block;
     }
 
 }

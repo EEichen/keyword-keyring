@@ -37,7 +37,8 @@ const NavBar = ({user}) => {
         </div>}
         {user && <div className='user-bar'>
           <CreateGenerator />
-          <h2 className='welcome'>Welcome to KwKr {user.username}</h2>
+            <h2 className='welcome'>Welcome to KwKr, {user.username}</h2>
+            <h2 className='alt-welcome'>KwKr</h2>
           <div className='nav-end'>
             <Options />
             <LogoutButton />
