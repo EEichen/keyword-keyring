@@ -66,6 +66,7 @@ const GeneratorCard = ({generator, keyword}) => {
                 disabled 
                 value={password ? password: ''}
                 ></input>
+                <button onClick={e => setShowPw(prev => !prev)}>{showPw ? 'Show' : 'Hide'}</button>
                 </div>
                 <div className='leftside-gen-buttons'>
                     <button disabled={!keyword} onClick={generatePw} >Generate</button>
