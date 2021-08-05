@@ -17,3 +17,9 @@ def users():
 def user(id):
     user = User.query.get(id)
     return user.to_dict()
+
+
+@user_routes.route('/', method=['PUT'])
+@login_required
+def change_password():
+    pass
