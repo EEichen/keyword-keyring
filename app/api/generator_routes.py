@@ -1,6 +1,7 @@
 from flask import Blueprint, jsonify, request
 from flask_login import login_required, current_user
 from app.models import db, Generator, Constraints
+import random
 
 
 generator_routes = Blueprint('generators', __name__)
@@ -19,7 +20,9 @@ def get_generators():
 @login_required
 def create_generator():
     data = request.json
-    seed_start = current_user.hashed_password[-5:]
+    start = random.randint(0, len(current_user.hashed_password) - 11)
+    end = start + random.randint(5, 10)
+    seed_start = current_user.hashed_password[start:end]
 
     ini_seed = 0
 
